@@ -1,0 +1,21 @@
+{
+    "jhipsterApp": {
+        "article" : {
+            "home": {
+                "title": "Articles",
+                "createLabel": "Créer un nouveau Article",
+                "createOrEditLabel": "Créer ou éditer un Article"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Article {{ id }} ?"
+            },
+            "detail": {
+                "title": "Article"
+            },
+            "title": "Title",
+            "description": "Description",
+            "date": "Date"
+        }
+    }
+}
+
