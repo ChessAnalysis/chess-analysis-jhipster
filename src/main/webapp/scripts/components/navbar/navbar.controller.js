@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('jhipsterApp')
-    .controller('NavbarController', function ($scope, $location, $state, Auth, Principal) {
+    .controller('NavbarController', function ($scope, $location, $state, Auth, Principal, Article, Category) {
         $scope.isAuthenticated = Principal.isAuthenticated;
         $scope.$state = $state;
 
@@ -9,4 +9,34 @@ angular.module('jhipsterApp')
             Auth.logout();
             $state.go('home');
         };
+        
+        
+        $scope.articles = Article.query();
+        console.log($scope.articles);
+        
+        
     });
+
+angular.module('jhipsterApp').filter("property", ["$filter", function($filter){
+    var parseString = function(input){
+        return input.split(".");
+    }
+
+    function getValue(element, propertyArray) {
+        var value = element;
+
+        angular.forEach(propertyArray, function(property) {
+            value = value[property];
+        });
+
+        return value;
+    }
+
+    return function (array, propertyString, target) {
+        var properties = parseString(propertyString);
+
+        return $filter('filter')(array, function(item){
+            return getValue(item, properties) == target;
+        });
+    }
+}]);

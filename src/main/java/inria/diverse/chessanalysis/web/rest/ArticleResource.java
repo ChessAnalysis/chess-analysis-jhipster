@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -35,7 +36,7 @@ public class ArticleResource {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Article> create(@RequestBody Article article) throws URISyntaxException {
+    public ResponseEntity<Article> create(@Valid @RequestBody Article article) throws URISyntaxException {
         log.debug("REST request to save Article : {}", article);
         if (article.getId() != null) {
             return ResponseEntity.badRequest().header("Failure", "A new article cannot already have an ID").body(null);
@@ -51,7 +52,7 @@ public class ArticleResource {
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Article> update(@RequestBody Article article) throws URISyntaxException {
+    public ResponseEntity<Article> update(@Valid @RequestBody Article article) throws URISyntaxException {
         log.debug("REST request to update Article : {}", article);
         if (article.getId() == null) {
             return create(article);

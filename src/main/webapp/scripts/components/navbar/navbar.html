@@ -21,6 +21,44 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
                                 <span>
                                     <span class="glyphicon glyphicon-th-list"></span>
+                                    <span class="hidden-tablet">
+                                        Documentation
+                                    </span>
+                                    <b class="caret"></b>
+                                </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="article in articles | property:'category.id':1">
+                        	<a href="#/article/{{article.id}}">
+                        		<span class="glyphicon glyphicon-asterisk">
+                        		</span>&#xA0;<span>{{article.title}}</span>
+                        	</a>
+                        </li>
+                    </ul>
+                </li>
+                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                                <span>
+                                    <span class="glyphicon glyphicon-th-list"></span>
+                                    <span class="hidden-tablet">
+                                        Résultats
+                                    </span>
+                                    <b class="caret"></b>
+                                </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="article in articles | property:'category.id':2">
+                        	<a href="#/article/{{article.id}}">
+                        		<span class="glyphicon glyphicon-asterisk">
+                        		</span>&#xA0;<span>{{article.title}}</span>
+                        	</a>
+                        </li>
+                    </ul>
+                </li>
+                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                                <span>
+                                    <span class="glyphicon glyphicon-th-list"></span>
                                     <span class="hidden-tablet" translate="global.menu.entities.main">
                                         Entities
                                     </span>
@@ -30,6 +68,8 @@
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active" ><a ui-sref="article"><span class="glyphicon glyphicon-asterisk"></span>
                         &#xA0;<span translate="global.menu.entities.article">article</span></a></li>
+                        <li ui-sref-active="active" ><a ui-sref="category"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.entities.category">category</span></a></li>
                         <!-- JHipster will add entities to the menu here -->
                     </ul>
                 </li>

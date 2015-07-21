@@ -2,15 +2,18 @@ package inria.diverse.chessanalysis.domain;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import inria.diverse.chessanalysis.domain.util.CustomDateTimeDeserializer;
-import inria.diverse.chessanalysis.domain.util.CustomDateTimeSerializer;
+import inria.diverse.chessanalysis.domain.util.CustomLocalDateSerializer;
+import inria.diverse.chessanalysis.domain.util.ISO8601LocalDateDeserializer;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Type;
-import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 
@@ -29,15 +32,21 @@ public class Article implements Serializable {
     @Column(name = "title")
     private String title;
 
-    @Lob
-    @Column(name = "description", columnDefinition="TEXT")
-    private String description;
-
-    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
-    @JsonSerialize(using = CustomDateTimeSerializer.class)
-    @JsonDeserialize(using = CustomDateTimeDeserializer.class)
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+    @JsonSerialize(using = CustomLocalDateSerializer.class)
+    @JsonDeserialize(using = ISO8601LocalDateDeserializer.class)
     @Column(name = "date")
-    private DateTime date;
+    private LocalDate date;
+
+    @Column(name = "short_description")
+    private String shortDescription;
+
+    @Size(max = 20000)
+    @Column(name = "long_description", length = 20000)
+    private String longDescription;
+
+    @ManyToOne
+    private Category category;
 
     public Long getId() {
         return id;
@@ -55,20 +64,36 @@ public class Article implements Serializable {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public DateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(DateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
+    public String getLongDescription() {
+        return longDescription;
+    }
+
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override
@@ -97,8 +122,9 @@ public class Article implements Serializable {
         return "Article{" +
                 "id=" + id +
                 ", title='" + title + "'" +
-                ", description='" + description + "'" +
                 ", date='" + date + "'" +
+                ", shortDescription='" + shortDescription + "'" +
+                ", longDescription='" + longDescription + "'" +
                 '}';
     }
 }

@@ -13,8 +13,10 @@
                 "title": "Article"
             },
             "title": "Title",
-            "description": "Description",
-            "date": "Date"
+            "date": "Date",
+            "shortDescription": "ShortDescription",
+            "longDescription": "LongDescription",
+            "category": "category"
         }
     }
 }

@@ -8,10 +8,23 @@ angular.module('jhipsterApp')
                 method: 'GET',
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
-                    data.date = DateUtils.convertDateTimeFromServer(data.date);
+                    data.date = DateUtils.convertLocaleDateFromServer(data.date);
                     return data;
                 }
             },
-            'update': { method:'PUT' }
+            'update': {
+                method: 'PUT',
+                transformRequest: function (data) {
+                    data.date = DateUtils.convertLocaleDateToServer(data.date);
+                    return angular.toJson(data);
+                }
+            },
+            'save': {
+                method: 'POST',
+                transformRequest: function (data) {
+                    data.date = DateUtils.convertLocaleDateToServer(data.date);
+                    return angular.toJson(data);
+                }
+            }
         });
     });

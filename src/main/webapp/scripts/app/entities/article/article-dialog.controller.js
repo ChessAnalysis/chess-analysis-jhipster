@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('jhipsterApp').controller('ArticleDialogController',
-    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Article',
-        function($scope, $stateParams, $modalInstance, entity, Article) {
+    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Article', 'Category',
+        function($scope, $stateParams, $modalInstance, entity, Article, Category) {
 
         $scope.article = entity;
+        $scope.categorys = Category.query();
         $scope.load = function(id) {
             Article.get({id : id}, function(result) {
                 $scope.article = result;

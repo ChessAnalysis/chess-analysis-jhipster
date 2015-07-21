@@ -1,5 +1,16 @@
 {
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "category",
+            "relationshipNameCapitalized": "Category",
+            "relationshipFieldName": "category",
+            "otherEntityName": "category",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Category",
+            "otherEntityField": "name"
+        }
+    ],
     "fields": [
         {
             "fieldId": 1,
@@ -13,35 +24,50 @@
         },
         {
             "fieldId": 2,
-            "fieldName": "description",
-            "fieldType": "String",
-            "fieldIsEnum": false,
-            "fieldNameCapitalized": "Description",
-            "fieldNameUnderscored": "description",
-            "fieldInJavaBeanMethod": "Description",
-            "fieldValidate": false
-        },
-        {
-            "fieldId": 3,
             "fieldName": "date",
-            "fieldType": "DateTime",
+            "fieldType": "LocalDate",
             "fieldIsEnum": false,
             "fieldNameCapitalized": "Date",
             "fieldNameUnderscored": "date",
             "fieldInJavaBeanMethod": "Date",
             "fieldValidate": false
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "shortDescription",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "ShortDescription",
+            "fieldNameUnderscored": "short_description",
+            "fieldInJavaBeanMethod": "ShortDescription",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "longDescription",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "LongDescription",
+            "fieldNameUnderscored": "long_description",
+            "fieldInJavaBeanMethod": "LongDescription",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "20000"
         }
     ],
     "fieldsContainOwnerManyToMany": false,
     "fieldsContainOwnerOneToOne": false,
     "fieldsContainOneToMany": false,
-    "fieldsContainLocalDate": false,
+    "fieldsContainLocalDate": true,
     "fieldsContainCustomTime": true,
     "fieldsContainBigDecimal": false,
-    "fieldsContainDateTime": true,
+    "fieldsContainDateTime": false,
     "fieldsContainDate": false,
-    "changelogDate": "20150710130204",
+    "changelogDate": "20150721110511",
     "dto": "no",
     "pagination": "no",
-    "validation": false
+    "validation": true
 }

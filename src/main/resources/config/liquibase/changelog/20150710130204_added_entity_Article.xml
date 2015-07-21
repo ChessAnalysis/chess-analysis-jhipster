@@ -19,11 +19,17 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="title" type="varchar(255)"/>
-            <column name="description" type="varchar(255)"/>
-            <column name="date" type="timestamp"/>
+            <column name="date" type="varchar(255)"/>
+            <column name="short_description" type="varchar(255)"/>
+            <column name="long_description" type="varchar(255)"/>
+            <column name="category_id" type="bigint"/>
         </createTable>
-        <dropDefaultValue tableName="ARTICLE" columnName="date" columnDataType="datetime"/>
-
         
+        <addForeignKeyConstraint baseColumnNames="category_id"
+                                 baseTableName="ARTICLE"
+                                 constraintName="fk_article_category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="CATEGORY"/>
+
     </changeSet>
 </databaseChangeLog>

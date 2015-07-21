@@ -43,8 +43,10 @@
                 <tr>
                     <th translate="global.field.id">ID</th>
                     <th translate="jhipsterApp.article.title">Title</th>
-                    <th translate="jhipsterApp.article.description">Description</th>
                     <th translate="jhipsterApp.article.date">Date</th>
+                    <th translate="jhipsterApp.article.shortDescription">ShortDescription</th>
+                    <th translate="jhipsterApp.article.longDescription">LongDescription</th>
+                    <th translate="jhipsterApp.article.category">category</th>
                     <th></th>
                 </tr>
             </thead>
@@ -52,8 +54,10 @@
                 <tr ng-repeat="article in articles">
                     <td><a ui-sref="article.detail({id:article.id})">{{article.id}}</a></td>
                     <td>{{article.title}}</td>
-                    <td>{{article.description}}</td>
                     <td>{{article.date}}</td>
+                    <td>{{article.shortDescription}}</td>
+                    <td>{{article.longDescription}}</td>
+                    <td>{{article.category.name}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="article.detail({id:article.id})"
