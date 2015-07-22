@@ -7,7 +7,7 @@ angular.module('jhipsterApp')
                 parent: 'entity',
                 url: '/articles',
                 data: {
-                    roles: ['ROLE_USER'],
+                    roles: [],
                     pageTitle: 'jhipsterApp.article.home.title'
                 },
                 views: {
@@ -28,7 +28,7 @@ angular.module('jhipsterApp')
                 parent: 'entity',
                 url: '/article/{id}',
                 data: {
-                    roles: ['ROLE_USER'],
+                    roles: [],
                     pageTitle: 'jhipsterApp.article.detail.title'
                 },
                 views: {
