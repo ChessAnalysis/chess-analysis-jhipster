@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "description": "Description for jhipster",
   "private": true,
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "0.4.5",
     "grunt-autoprefixer": "2.2.0",
@@ -27,7 +26,7 @@
     "grunt-svgmin": "2.0.1",
     "grunt-text-replace": "0.4.0",
     "grunt-usemin": "3.0.0",
-    "grunt-angular-templates":"0.5.7",
+    "grunt-angular-templates": "0.5.7",
     "load-grunt-tasks": "3.1.0",
     "grunt-karma": "0.11.0",
     "time-grunt": "1.1.0",
@@ -52,5 +51,19 @@
   },
   "engines": {
     "node": ">=0.12.0"
-  }
+  },
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fresnault/jhipster-chess-analysis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fresnault/jhipster-chess-analysis/issues"
+  },
+  "homepage": "https://github.com/fresnault/jhipster-chess-analysis#readme"
 }

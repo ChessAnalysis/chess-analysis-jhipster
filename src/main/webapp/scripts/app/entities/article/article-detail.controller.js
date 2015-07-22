@@ -11,4 +11,5 @@ angular.module('jhipsterApp')
         $rootScope.$on('jhipsterApp:articleUpdate', function(event, result) {
             $scope.article = result;
         });
+        
     });
