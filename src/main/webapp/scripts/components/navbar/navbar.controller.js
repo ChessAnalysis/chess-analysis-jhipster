@@ -10,10 +10,8 @@ angular.module('jhipsterApp')
             $state.go('home');
         };
         
-        
         $scope.articles = Article.query();
         console.log($scope.articles);
-        
         
     });
 
