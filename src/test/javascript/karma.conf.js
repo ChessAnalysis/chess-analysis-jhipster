@@ -39,6 +39,7 @@ module.exports = function (config) {
             'main/webapp/bower_components/textAngular/dist/textAngular.js',
             'main/webapp/bower_components/textAngular/dist/textAngular-sanitize.js',
             'main/webapp/bower_components/textAngular/dist/textAngularSetup.js',
+            'main/webapp/bower_components/angular-filter/dist/angular-filter.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'main/webapp/scripts/app/app.js',

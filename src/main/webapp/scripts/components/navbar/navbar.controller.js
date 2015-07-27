@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('jhipsterApp')
-    .controller('NavbarController', function ($scope, $location, $state, Auth, Principal, Article, Category) {
+    .controller('NavbarController', function ($scope, $location, $state, Auth, Principal) {
         $scope.isAuthenticated = Principal.isAuthenticated;
         $scope.$state = $state;
 
@@ -9,10 +9,6 @@ angular.module('jhipsterApp')
             Auth.logout();
             $state.go('home');
         };
-        
-        $scope.categories = Category.query();
-        
-        $scope.articles = Article.query();
         
     });
 

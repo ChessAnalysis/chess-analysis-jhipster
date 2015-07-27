@@ -2,9 +2,9 @@
 
 angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascalprecht.translate', 
                'ui.bootstrap', // for modal dialogs
-    'ngResource', 'ui.router', 'ngCookies', 'ngCacheBuster', 'infinite-scroll', 'textAngular'])
+    'ngResource', 'ui.router', 'ngCookies', 'ngCacheBuster', 'infinite-scroll', 'textAngular', 'angular.filter'])
 
-    .run(function ($rootScope, $location, $window, $http, $state, $translate, Language, Auth, Principal, ENV, VERSION) {
+    .run(function ($rootScope, $filter, $location, $window, $http, $state, $translate, Language, Auth, Principal, ENV, VERSION, Category, Article) {
         $rootScope.ENV = ENV;
         $rootScope.VERSION = VERSION;
         $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {
@@ -48,7 +48,14 @@ angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
                 $state.go($rootScope.previousStateName, $rootScope.previousStateParams);
             }
         };
+        
+        $rootScope.categories = Category.query();
+        Article.query(function(data) {
+        	$rootScope.articles = $filter('orderBy')(data , '-date');
+        });
+        console.log($rootScope.articles);
     })
+    
     .factory('authExpiredInterceptor', function ($rootScope, $q, $injector, localStorageService) {
         return {
             responseError: function(response) {
@@ -115,3 +122,5 @@ angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
         tmhDynamicLocaleProvider.storageKey('NG_TRANSLATE_LANG_KEY');
         
     });
+
+
