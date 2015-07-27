@@ -42,6 +42,11 @@ public class CategoryResourceTest {
     private static final String DEFAULT_NAME = "SAMPLE_TEXT";
     private static final String UPDATED_NAME = "UPDATED_TEXT";
 
+    private static final Integer DEFAULT_SORT = 0;
+    private static final Integer UPDATED_SORT = 1;
+    private static final String DEFAULT_ICON = "SAMPLE_TEXT";
+    private static final String UPDATED_ICON = "UPDATED_TEXT";
+
     @Inject
     private CategoryRepository categoryRepository;
 
@@ -61,6 +66,8 @@ public class CategoryResourceTest {
     public void initTest() {
         category = new Category();
         category.setName(DEFAULT_NAME);
+        category.setSort(DEFAULT_SORT);
+        category.setIcon(DEFAULT_ICON);
     }
 
     @Test
@@ -79,6 +86,8 @@ public class CategoryResourceTest {
         assertThat(categorys).hasSize(databaseSizeBeforeCreate + 1);
         Category testCategory = categorys.get(categorys.size() - 1);
         assertThat(testCategory.getName()).isEqualTo(DEFAULT_NAME);
+        assertThat(testCategory.getSort()).isEqualTo(DEFAULT_SORT);
+        assertThat(testCategory.getIcon()).isEqualTo(DEFAULT_ICON);
     }
 
     @Test
@@ -92,7 +101,9 @@ public class CategoryResourceTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.[*].id").value(hasItem(category.getId().intValue())))
-                .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())));
+                .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
+                .andExpect(jsonPath("$.[*].sort").value(hasItem(DEFAULT_SORT)))
+                .andExpect(jsonPath("$.[*].icon").value(hasItem(DEFAULT_ICON.toString())));
     }
 
     @Test
@@ -106,7 +117,9 @@ public class CategoryResourceTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.id").value(category.getId().intValue()))
-            .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()));
+            .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
+            .andExpect(jsonPath("$.sort").value(DEFAULT_SORT))
+            .andExpect(jsonPath("$.icon").value(DEFAULT_ICON.toString()));
     }
 
     @Test
@@ -127,6 +140,8 @@ public class CategoryResourceTest {
 
         // Update the category
         category.setName(UPDATED_NAME);
+        category.setSort(UPDATED_SORT);
+        category.setIcon(UPDATED_ICON);
         restCategoryMockMvc.perform(put("/api/categorys")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(category)))
@@ -137,6 +152,8 @@ public class CategoryResourceTest {
         assertThat(categorys).hasSize(databaseSizeBeforeUpdate);
         Category testCategory = categorys.get(categorys.size() - 1);
         assertThat(testCategory.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testCategory.getSort()).isEqualTo(UPDATED_SORT);
+        assertThat(testCategory.getIcon()).isEqualTo(UPDATED_ICON);
     }
 
     @Test

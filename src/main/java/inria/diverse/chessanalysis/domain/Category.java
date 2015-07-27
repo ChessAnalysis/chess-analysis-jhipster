@@ -23,6 +23,12 @@ public class Category implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "sort")
+    private Integer sort;
+
+    @Column(name = "icon")
+    private String icon;
+
     public Long getId() {
         return id;
     }
@@ -37,6 +43,22 @@ public class Category implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getSort() {
+        return sort;
+    }
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     @Override
@@ -65,6 +87,8 @@ public class Category implements Serializable {
         return "Category{" +
                 "id=" + id +
                 ", name='" + name + "'" +
+                ", sort='" + sort + "'" +
+                ", icon='" + icon + "'" +
                 '}';
     }
 }

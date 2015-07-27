@@ -16,6 +16,8 @@
             "date": "Date",
             "shortDescription": "ShortDescription",
             "longDescription": "LongDescription",
+            "sort": "Sort",
+            "icon": "Icon",
             "category": "category"
         }
     }

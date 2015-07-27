@@ -43,6 +43,8 @@
                 <tr>
                     <th translate="global.field.id">ID</th>
                     <th translate="jhipsterApp.category.name">Name</th>
+                    <th translate="jhipsterApp.category.sort">Sort</th>
+                    <th translate="jhipsterApp.category.icon">Icon</th>
                     <th></th>
                 </tr>
             </thead>
@@ -50,6 +52,8 @@
                 <tr ng-repeat="category in categorys">
                     <td><a ui-sref="category.detail({id:category.id})">{{category.id}}</a></td>
                     <td>{{category.name}}</td>
+                    <td>{{category.sort}}</td>
+                    <td>{{category.icon}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="category.detail({id:category.id})"

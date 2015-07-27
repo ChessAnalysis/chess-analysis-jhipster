@@ -19,6 +19,26 @@
                     ng-model="category.name">
 
         </div>
+        
+        <div class="form-group">
+            <label translate="jhipsterApp.category.icon" for="field_icon">Icon</label>
+            <input type="text" class="form-control" name="icon" id="field_icon"
+                    ng-model="category.icon">
+
+        </div>
+        
+        <div class="form-group">
+            <label translate="jhipsterApp.category.sort" for="field_sort">Sort</label>
+            <input type="number" class="form-control" name="sort" id="field_sort"
+                    ng-model="category.sort">
+
+            <div ng-show="editForm.sort.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.sort.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
 
     </div>
     <div class="modal-footer">

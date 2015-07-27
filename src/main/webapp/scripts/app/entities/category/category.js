@@ -60,7 +60,7 @@ angular.module('jhipsterApp')
                         size: 'lg',
                         resolve: {
                             entity: function () {
-                                return {name: null, id: null};
+                                return {name: null, sort: null, icon: null, id: null};
                             }
                         }
                     }).result.then(function(result) {

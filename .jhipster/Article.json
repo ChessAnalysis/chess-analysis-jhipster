@@ -56,6 +56,27 @@
                 "maxlength"
             ],
             "fieldValidateRulesMaxlength": "20000"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "sort",
+            "fieldType": "Integer",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Sort",
+            "fieldNameUnderscored": "sort",
+            "fieldInJavaBeanMethod": "Sort",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "icon",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Icon",
+            "fieldNameUnderscored": "icon",
+            "fieldInJavaBeanMethod": "Icon",
+            "fieldValidate": false
         }
     ],
     "fieldsContainOwnerManyToMany": false,
@@ -66,7 +87,7 @@
     "fieldsContainBigDecimal": false,
     "fieldsContainDateTime": false,
     "fieldsContainDate": false,
-    "changelogDate": "20150721110511",
+    "changelogDate": "20150727110000",
     "dto": "no",
     "pagination": "no",
     "validation": true

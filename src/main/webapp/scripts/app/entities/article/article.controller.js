@@ -3,7 +3,6 @@
 angular.module('jhipsterApp')
 .controller('ArticleController', function ($scope, Category, Article) {
 	$scope.articles = [];
-	$scope.currentCategory = 1;
 	$scope.loadAll = function() {
 		Article.query(function(result) {
 			$scope.articles = result;
@@ -33,13 +32,12 @@ angular.module('jhipsterApp')
 	};
 
 	$scope.clear = function () {
-		$scope.article = {title: null, date: null, shortDescription: null, longDescription: null, id: null};
+		$scope.article = {title: null, date: null, shortDescription: null, longDescription: null, sort: null, icon: null, id: null};
 	};
-	
+
 	$scope.categories = Category.query();
-	
+
 	$scope.showTable = function (e) {
 		$scope.currentCategory = e;
 	}
-
 });

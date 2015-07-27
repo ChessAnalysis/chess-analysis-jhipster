@@ -12,7 +12,9 @@
             "detail": {
                 "title": "Category"
             },
-            "name": "Name"
+            "name": "Name",
+            "sort": "Sort",
+            "icon": "Icon"
         }
     }
 }

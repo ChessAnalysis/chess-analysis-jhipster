@@ -32,6 +32,6 @@ angular.module('jhipsterApp')
         };
 
         $scope.clear = function () {
-            $scope.category = {name: null, id: null};
+            $scope.category = {name: null, sort: null, icon: null, id: null};
         };
     });

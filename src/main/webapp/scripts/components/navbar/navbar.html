@@ -17,18 +17,18 @@
 						translate="global.menu.home">Home</span>
 				</a></li>
 
-				<li ng-repeat="category in categories" ui-sref-active="active" class="dropdown pointer">
+				<li ng-repeat="category in categories | orderBy:'sort'" ui-sref-active="active" class="dropdown pointer">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="">
 						<span>
-							<span class="glyphicon glyphicon-th-list"></span>
+							<span class="glyphicon {{category.icon}}"></span>
 							<span class="hidden-tablet">{{category.name}}</span>
 							<b class="caret"></b>
 						</span>
 					</a>
 					<ul class="dropdown-menu">
-						<li ng-repeat="article in articles | property:'category.id':category.id">
+						<li ng-repeat="article in articles | property:'category.id':category.id | orderBy:'sort'">
 							<a href="#/article/{{article.id}}"> <span
-								class="glyphicon glyphicon-asterisk"> </span>&#xA0;<span>{{article.title}}</span>
+								class="glyphicon {{article.icon}}"> </span>&#xA0;<span>{{article.title}}</span>
 						</a>
 						</li>
 					</ul>

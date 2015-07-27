@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('jhipsterApp')
-    .controller('ArticleDetailController', function ($scope, $rootScope, $stateParams, entity, Article) {
+    .controller('ArticleDetailController', function ($scope, $rootScope, $stateParams, entity, Article, Category) {
         $scope.article = entity;
         $scope.load = function (id) {
             Article.get({id: id}, function(result) {
@@ -11,5 +11,4 @@ angular.module('jhipsterApp')
         $rootScope.$on('jhipsterApp:articleUpdate', function(event, result) {
             $scope.article = result;
         });
-        
     });

@@ -8,6 +8,7 @@
                 "main": "Entities",
                 "article": "Article",
                 "category": "Category",
+                "testEntity": "TestEntity",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

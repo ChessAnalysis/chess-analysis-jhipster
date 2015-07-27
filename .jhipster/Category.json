@@ -10,6 +10,27 @@
             "fieldNameUnderscored": "name",
             "fieldInJavaBeanMethod": "Name",
             "fieldValidate": false
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "sort",
+            "fieldType": "Integer",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Sort",
+            "fieldNameUnderscored": "sort",
+            "fieldInJavaBeanMethod": "Sort",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "icon",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Icon",
+            "fieldNameUnderscored": "icon",
+            "fieldInJavaBeanMethod": "Icon",
+            "fieldValidate": false
         }
     ],
     "fieldsContainOwnerManyToMany": false,
@@ -20,7 +41,7 @@
     "fieldsContainBigDecimal": false,
     "fieldsContainDateTime": false,
     "fieldsContainDate": false,
-    "changelogDate": "20150721110254",
+    "changelogDate": "20150727100000",
     "dto": "no",
     "pagination": "no",
     "validation": false

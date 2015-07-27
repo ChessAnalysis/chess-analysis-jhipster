@@ -45,6 +45,12 @@ public class Article implements Serializable {
     @Column(name = "long_description", length = 20000)
     private String longDescription;
 
+    @Column(name = "sort")
+    private Integer sort;
+
+    @Column(name = "icon")
+    private String icon;
+
     @ManyToOne
     private Category category;
 
@@ -88,6 +94,22 @@ public class Article implements Serializable {
         this.longDescription = longDescription;
     }
 
+    public Integer getSort() {
+        return sort;
+    }
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
     public Category getCategory() {
         return category;
     }
@@ -125,6 +147,8 @@ public class Article implements Serializable {
                 ", date='" + date + "'" +
                 ", shortDescription='" + shortDescription + "'" +
                 ", longDescription='" + longDescription + "'" +
+                ", sort='" + sort + "'" +
+                ", icon='" + icon + "'" +
                 '}';
     }
 }

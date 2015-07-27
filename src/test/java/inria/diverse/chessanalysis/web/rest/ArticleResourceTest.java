@@ -50,6 +50,11 @@ public class ArticleResourceTest {
     private static final String DEFAULT_LONG_DESCRIPTION = "SAMPLE_TEXT";
     private static final String UPDATED_LONG_DESCRIPTION = "UPDATED_TEXT";
 
+    private static final Integer DEFAULT_SORT = 0;
+    private static final Integer UPDATED_SORT = 1;
+    private static final String DEFAULT_ICON = "SAMPLE_TEXT";
+    private static final String UPDATED_ICON = "UPDATED_TEXT";
+
     @Inject
     private ArticleRepository articleRepository;
 
@@ -72,6 +77,8 @@ public class ArticleResourceTest {
         article.setDate(DEFAULT_DATE);
         article.setShortDescription(DEFAULT_SHORT_DESCRIPTION);
         article.setLongDescription(DEFAULT_LONG_DESCRIPTION);
+        article.setSort(DEFAULT_SORT);
+        article.setIcon(DEFAULT_ICON);
     }
 
     @Test
@@ -93,6 +100,8 @@ public class ArticleResourceTest {
         assertThat(testArticle.getDate()).isEqualTo(DEFAULT_DATE);
         assertThat(testArticle.getShortDescription()).isEqualTo(DEFAULT_SHORT_DESCRIPTION);
         assertThat(testArticle.getLongDescription()).isEqualTo(DEFAULT_LONG_DESCRIPTION);
+        assertThat(testArticle.getSort()).isEqualTo(DEFAULT_SORT);
+        assertThat(testArticle.getIcon()).isEqualTo(DEFAULT_ICON);
     }
 
     @Test
@@ -109,7 +118,9 @@ public class ArticleResourceTest {
                 .andExpect(jsonPath("$.[*].title").value(hasItem(DEFAULT_TITLE.toString())))
                 .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
                 .andExpect(jsonPath("$.[*].shortDescription").value(hasItem(DEFAULT_SHORT_DESCRIPTION.toString())))
-                .andExpect(jsonPath("$.[*].longDescription").value(hasItem(DEFAULT_LONG_DESCRIPTION.toString())));
+                .andExpect(jsonPath("$.[*].longDescription").value(hasItem(DEFAULT_LONG_DESCRIPTION.toString())))
+                .andExpect(jsonPath("$.[*].sort").value(hasItem(DEFAULT_SORT)))
+                .andExpect(jsonPath("$.[*].icon").value(hasItem(DEFAULT_ICON.toString())));
     }
 
     @Test
@@ -126,7 +137,9 @@ public class ArticleResourceTest {
             .andExpect(jsonPath("$.title").value(DEFAULT_TITLE.toString()))
             .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()))
             .andExpect(jsonPath("$.shortDescription").value(DEFAULT_SHORT_DESCRIPTION.toString()))
-            .andExpect(jsonPath("$.longDescription").value(DEFAULT_LONG_DESCRIPTION.toString()));
+            .andExpect(jsonPath("$.longDescription").value(DEFAULT_LONG_DESCRIPTION.toString()))
+            .andExpect(jsonPath("$.sort").value(DEFAULT_SORT))
+            .andExpect(jsonPath("$.icon").value(DEFAULT_ICON.toString()));
     }
 
     @Test
@@ -150,6 +163,8 @@ public class ArticleResourceTest {
         article.setDate(UPDATED_DATE);
         article.setShortDescription(UPDATED_SHORT_DESCRIPTION);
         article.setLongDescription(UPDATED_LONG_DESCRIPTION);
+        article.setSort(UPDATED_SORT);
+        article.setIcon(UPDATED_ICON);
         restArticleMockMvc.perform(put("/api/articles")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(article)))
@@ -163,6 +178,8 @@ public class ArticleResourceTest {
         assertThat(testArticle.getDate()).isEqualTo(UPDATED_DATE);
         assertThat(testArticle.getShortDescription()).isEqualTo(UPDATED_SHORT_DESCRIPTION);
         assertThat(testArticle.getLongDescription()).isEqualTo(UPDATED_LONG_DESCRIPTION);
+        assertThat(testArticle.getSort()).isEqualTo(UPDATED_SORT);
+        assertThat(testArticle.getIcon()).isEqualTo(UPDATED_ICON);
     }
 
     @Test
