@@ -53,7 +53,7 @@ angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
         Article.query(function(data) {
         	$rootScope.articles = $filter('orderBy')(data , '-date');
         });
-        console.log($rootScope.articles);
+        
     })
     
     .factory('authExpiredInterceptor', function ($rootScope, $q, $injector, localStorageService) {
