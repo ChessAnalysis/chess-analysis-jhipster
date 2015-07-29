@@ -1,19 +1,16 @@
 <div>
 
-    <h2>
-		Articles
-		<button class="btn btn-primary" ui-sref="article.new">
-			<span class="glyphicon glyphicon-flash"></span> <span
-		translate="jhipsterApp.article.home.createLabel">Create a new
-				Article</span>
-		</button>
-	</h2>
-    
-    <ul id="category" class="nav nav-pills">
-		<li ng-repeat="category in categories" role="presentation">
-			<a href="#" ng-click="showTable(category.id)">{{category.name}}</a>
-		</li>
-	</ul>
+    <h2 translate="jhipsterApp.article.home.title">Articles</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="article.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="jhipsterApp.article.home.createLabel">Create a new Article</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div class="modal fade" id="deleteArticleConfirmation">
         <div class="modal-dialog">
@@ -44,21 +41,23 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th translate="global.field.id">ID</th>
                     <th translate="jhipsterApp.article.title">Title</th>
                     <th translate="jhipsterApp.article.date">Date</th>
-                    <th translate="jhipsterApp.article.shortDescription">ShortDescription</th>
-                    <th translate="jhipsterApp.article.icon">Icon</th>
+                    <th translate="jhipsterApp.article.question">Question</th>
+                    <th translate="jhipsterApp.article.content">Content</th>
+                    <th translate="jhipsterApp.article.sort">Sort</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="article in articles  | property:'category.id':currentCategory | orderBy:'sort'">
-                    <td>{{article.sort}}</td>
+                <tr ng-repeat="article in articles">
+                    <td><a ui-sref="article.detail({id:article.id})">{{article.id}}</a></td>
                     <td>{{article.title}}</td>
                     <td>{{article.date}}</td>
-                    <td>{{article.shortDescription}}</td>
-                    <td>{{article.icon}}</td>
+                    <td>{{article.question}}</td>
+                    <td>{{article.content}}</td>
+                    <td>{{article.sort}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="article.detail({id:article.id})"

@@ -45,15 +45,13 @@ public class ArticleResourceTest {
 
     private static final LocalDate DEFAULT_DATE = new LocalDate(0L);
     private static final LocalDate UPDATED_DATE = new LocalDate();
-    private static final String DEFAULT_SHORT_DESCRIPTION = "SAMPLE_TEXT";
-    private static final String UPDATED_SHORT_DESCRIPTION = "UPDATED_TEXT";
-    private static final String DEFAULT_LONG_DESCRIPTION = "SAMPLE_TEXT";
-    private static final String UPDATED_LONG_DESCRIPTION = "UPDATED_TEXT";
+    private static final String DEFAULT_QUESTION = "SAMPLE_TEXT";
+    private static final String UPDATED_QUESTION = "UPDATED_TEXT";
+    private static final String DEFAULT_CONTENT = "SAMPLE_TEXT";
+    private static final String UPDATED_CONTENT = "UPDATED_TEXT";
 
     private static final Integer DEFAULT_SORT = 0;
     private static final Integer UPDATED_SORT = 1;
-    private static final String DEFAULT_ICON = "SAMPLE_TEXT";
-    private static final String UPDATED_ICON = "UPDATED_TEXT";
 
     @Inject
     private ArticleRepository articleRepository;
@@ -75,10 +73,9 @@ public class ArticleResourceTest {
         article = new Article();
         article.setTitle(DEFAULT_TITLE);
         article.setDate(DEFAULT_DATE);
-        article.setShortDescription(DEFAULT_SHORT_DESCRIPTION);
-        article.setLongDescription(DEFAULT_LONG_DESCRIPTION);
+        article.setQuestion(DEFAULT_QUESTION);
+        article.setContent(DEFAULT_CONTENT);
         article.setSort(DEFAULT_SORT);
-        article.setIcon(DEFAULT_ICON);
     }
 
     @Test
@@ -98,10 +95,9 @@ public class ArticleResourceTest {
         Article testArticle = articles.get(articles.size() - 1);
         assertThat(testArticle.getTitle()).isEqualTo(DEFAULT_TITLE);
         assertThat(testArticle.getDate()).isEqualTo(DEFAULT_DATE);
-        assertThat(testArticle.getShortDescription()).isEqualTo(DEFAULT_SHORT_DESCRIPTION);
-        assertThat(testArticle.getLongDescription()).isEqualTo(DEFAULT_LONG_DESCRIPTION);
+        assertThat(testArticle.getQuestion()).isEqualTo(DEFAULT_QUESTION);
+        assertThat(testArticle.getContent()).isEqualTo(DEFAULT_CONTENT);
         assertThat(testArticle.getSort()).isEqualTo(DEFAULT_SORT);
-        assertThat(testArticle.getIcon()).isEqualTo(DEFAULT_ICON);
     }
 
     @Test
@@ -117,10 +113,9 @@ public class ArticleResourceTest {
                 .andExpect(jsonPath("$.[*].id").value(hasItem(article.getId().intValue())))
                 .andExpect(jsonPath("$.[*].title").value(hasItem(DEFAULT_TITLE.toString())))
                 .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
-                .andExpect(jsonPath("$.[*].shortDescription").value(hasItem(DEFAULT_SHORT_DESCRIPTION.toString())))
-                .andExpect(jsonPath("$.[*].longDescription").value(hasItem(DEFAULT_LONG_DESCRIPTION.toString())))
-                .andExpect(jsonPath("$.[*].sort").value(hasItem(DEFAULT_SORT)))
-                .andExpect(jsonPath("$.[*].icon").value(hasItem(DEFAULT_ICON.toString())));
+                .andExpect(jsonPath("$.[*].question").value(hasItem(DEFAULT_QUESTION.toString())))
+                .andExpect(jsonPath("$.[*].content").value(hasItem(DEFAULT_CONTENT.toString())))
+                .andExpect(jsonPath("$.[*].sort").value(hasItem(DEFAULT_SORT)));
     }
 
     @Test
@@ -136,10 +131,9 @@ public class ArticleResourceTest {
             .andExpect(jsonPath("$.id").value(article.getId().intValue()))
             .andExpect(jsonPath("$.title").value(DEFAULT_TITLE.toString()))
             .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()))
-            .andExpect(jsonPath("$.shortDescription").value(DEFAULT_SHORT_DESCRIPTION.toString()))
-            .andExpect(jsonPath("$.longDescription").value(DEFAULT_LONG_DESCRIPTION.toString()))
-            .andExpect(jsonPath("$.sort").value(DEFAULT_SORT))
-            .andExpect(jsonPath("$.icon").value(DEFAULT_ICON.toString()));
+            .andExpect(jsonPath("$.question").value(DEFAULT_QUESTION.toString()))
+            .andExpect(jsonPath("$.content").value(DEFAULT_CONTENT.toString()))
+            .andExpect(jsonPath("$.sort").value(DEFAULT_SORT));
     }
 
     @Test
@@ -161,10 +155,9 @@ public class ArticleResourceTest {
         // Update the article
         article.setTitle(UPDATED_TITLE);
         article.setDate(UPDATED_DATE);
-        article.setShortDescription(UPDATED_SHORT_DESCRIPTION);
-        article.setLongDescription(UPDATED_LONG_DESCRIPTION);
+        article.setQuestion(UPDATED_QUESTION);
+        article.setContent(UPDATED_CONTENT);
         article.setSort(UPDATED_SORT);
-        article.setIcon(UPDATED_ICON);
         restArticleMockMvc.perform(put("/api/articles")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(article)))
@@ -176,10 +169,9 @@ public class ArticleResourceTest {
         Article testArticle = articles.get(articles.size() - 1);
         assertThat(testArticle.getTitle()).isEqualTo(UPDATED_TITLE);
         assertThat(testArticle.getDate()).isEqualTo(UPDATED_DATE);
-        assertThat(testArticle.getShortDescription()).isEqualTo(UPDATED_SHORT_DESCRIPTION);
-        assertThat(testArticle.getLongDescription()).isEqualTo(UPDATED_LONG_DESCRIPTION);
+        assertThat(testArticle.getQuestion()).isEqualTo(UPDATED_QUESTION);
+        assertThat(testArticle.getContent()).isEqualTo(UPDATED_CONTENT);
         assertThat(testArticle.getSort()).isEqualTo(UPDATED_SORT);
-        assertThat(testArticle.getIcon()).isEqualTo(UPDATED_ICON);
     }
 
     @Test

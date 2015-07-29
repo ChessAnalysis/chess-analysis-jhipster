@@ -1,20 +1,63 @@
 
-<div class="row container">
-	<div class="jumbotron col-md-9">
-	    <h2>{{article.title}}</h2>
-	    <div ng-bind-html="article.longDescription"></div>
+<div>
+    <h2><span translate="jhipsterApp.article.detail.title">Article</span> {{article.id}}</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="jhipsterApp.article.title">Title</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{article.title}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="jhipsterApp.article.date">Date</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{article.date}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="jhipsterApp.article.question">Question</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{article.question}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="jhipsterApp.article.content">Content</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{article.content}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="jhipsterApp.article.sort">Sort</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{article.sort}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <div class="col-md-3">
-		<div class="list-group">
-			<div class="list-group-item active">
-				<h4 class="list-group-item-heading">Derniers articles</h4>
-				<div ng-repeat="(day, dayEvents) in articles | groupBy: 'date' | toArray:true">
-					<p>{{dayEvents[0].date | date:'d MMMM'}}</p>
-					<a style="display:block" href="/#/article/{{article.id}}" ng-repeat="article in dayEvents" class="list-group-item-text">{{article.title}}</a>
-					<!--  Group name: {{ articles.article }}
-					<p ng-repeat="article in articlesByDate" class="list-group-item-text">{{article.title}}</p>-->
-				</div>
-			</div>
-		</div>
-	</div>
+
+    <button type="submit"
+            ui-sref="article"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
 </div>

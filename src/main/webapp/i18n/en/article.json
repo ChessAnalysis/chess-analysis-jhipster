@@ -14,11 +14,9 @@
             },
             "title": "Title",
             "date": "Date",
-            "shortDescription": "ShortDescription",
-            "longDescription": "LongDescription",
-            "sort": "Sort",
-            "icon": "Icon",
-            "category": "category"
+            "question": "Question",
+            "content": "Content",
+            "sort": "Sort"
         }
     }
 }

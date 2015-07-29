@@ -1,4 +1,4 @@
-<nav class="navbar" role="navigation">
+<!-- <nav class="navbar" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -15,24 +15,7 @@
 				<li ui-sref-active="active"><a ui-sref="home"> <span
 						class="glyphicon glyphicon-home"></span> <span
 						translate="global.menu.home">Home</span>
-				</a></li>
-
-				<li ng-repeat="category in categories | orderBy:'sort'" ui-sref-active="active" class="dropdown pointer">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="">
-						<span>
-							<span class="glyphicon {{category.icon}}"></span>
-							<span class="hidden-tablet">{{category.name}}</span>
-							<b class="caret"></b>
-						</span>
-					</a>
-					<ul class="dropdown-menu">
-						<li ng-repeat="article in articles | property:'category.id':category.id | orderBy:'sort'">
-							<a href="#/article/{{article.id}}"> <span
-								class="glyphicon {{article.icon}}"> </span>&#xA0;<span>{{article.title}}</span>
-						</a>
-						</li>
-					</ul>
-				</li>	
+				</a></li>	
 
 				<li ui-sref-active="active" ng-switch-when="true"
 					class="dropdown pointer"><a class="dropdown-toggle"
@@ -43,13 +26,8 @@
 					</span>
 				</a>
 					<ul class="dropdown-menu">
-						<li ui-sref-active="active"><a ui-sref="article"><span
-								class="glyphicon glyphicon-asterisk"></span> &#xA0;<span
-								translate="global.menu.entities.article">article</span></a></li>
-						<li ui-sref-active="active"><a ui-sref="category"><span
-								class="glyphicon glyphicon-asterisk"></span> &#xA0;<span
-								translate="global.menu.entities.category">category</span></a></li>
-						<!-- JHipster will add entities to the menu here -->
+<li ui-sref-active="active" ><a ui-sref="article"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.entities.article">article</span></a></li>
 					</ul></li>
 				<li ng-class="{active: $state.includes('account')}"
 					class="dropdown pointer"><a class="dropdown-toggle"
@@ -114,21 +92,22 @@
 							target="_tab"><span class="glyphicon glyphicon-hdd"></span>
 								&#xA0;<span translate="global.menu.admin.database">Database</span></a></li>
 					</ul></li>
-				<li ui-sref-active="active" class="dropdown pointer"
-					ng-controller="LanguageController"><a class="dropdown-toggle"
-					data-toggle="dropdown" href=""> <span> <span
-							class="glyphicon glyphicon-flag"></span> <span
-							class="hidden-tablet" translate="global.menu.language">Language</span>
-							<b class="caret"></b>
-					</span>
 				</a>
-					<ul class="dropdown-menu">
-						<li active-menu="{{language}}" ng-repeat="language in languages">
-							<a href="" ng-click="changeLanguage(language)">{{language |
-								findLanguageFromKey}}</a>
-						</li>
-					</ul></li>
 			</ul>
 		</div>
 	</div>
+</nav>-->
+
+<a id="menu-toggle" href="#" ng-click="toggleCustom()"
+	class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+
+<nav ng-show="checked" class="navbar" role="navigation">
+	<pageslide ps-open="checked"> <a id="menu-toggle" href="#"
+		ng-click="toggleCustom()" class="btn btn-dark btn-lg toggle"><i
+		class="fa fa-times"></i></a>
+	<div style="padding: 20px; display: block;" id="demo-right">
+		<h2></h2>
+		<a href="#carousel">Insights</a>
+	</div>
+	</pageslide>
 </nav>

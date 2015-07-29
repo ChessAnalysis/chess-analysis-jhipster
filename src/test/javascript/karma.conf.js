@@ -40,6 +40,9 @@ module.exports = function (config) {
             'main/webapp/bower_components/textAngular/dist/textAngular-sanitize.js',
             'main/webapp/bower_components/textAngular/dist/textAngularSetup.js',
             'main/webapp/bower_components/angular-filter/dist/angular-filter.js',
+            'main/webapp/bower_components/showdown/src/showdown.js',
+            'main/webapp/bower_components/angular-markdown-directive/markdown.js',
+            'main/webapp/bower_components/ng-pageslide/dist/angular-pageslide-directive.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'main/webapp/scripts/app/app.js',

@@ -12,8 +12,6 @@ import org.joda.time.LocalDate;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 
@@ -38,21 +36,15 @@ public class Article implements Serializable {
     @Column(name = "date")
     private LocalDate date;
 
-    @Column(name = "short_description")
-    private String shortDescription;
+    @Column(name = "question")
+    private String question;
 
-    @Size(max = 20000)
-    @Column(name = "long_description", length = 20000)
-    private String longDescription;
+    @Size(max = 650000)
+    @Column(name = "content", length = 650000)
+    private String content;
 
     @Column(name = "sort")
     private Integer sort;
-
-    @Column(name = "icon")
-    private String icon;
-
-    @ManyToOne
-    private Category category;
 
     public Long getId() {
         return id;
@@ -78,20 +70,20 @@ public class Article implements Serializable {
         this.date = date;
     }
 
-    public String getShortDescription() {
-        return shortDescription;
+    public String getQuestion() {
+        return question;
     }
 
-    public void setShortDescription(String shortDescription) {
-        this.shortDescription = shortDescription;
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
-    public String getLongDescription() {
-        return longDescription;
+    public String getContent() {
+        return content;
     }
 
-    public void setLongDescription(String longDescription) {
-        this.longDescription = longDescription;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Integer getSort() {
@@ -100,22 +92,6 @@ public class Article implements Serializable {
 
     public void setSort(Integer sort) {
         this.sort = sort;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 
     @Override
@@ -145,10 +121,9 @@ public class Article implements Serializable {
                 "id=" + id +
                 ", title='" + title + "'" +
                 ", date='" + date + "'" +
-                ", shortDescription='" + shortDescription + "'" +
-                ", longDescription='" + longDescription + "'" +
+                ", question='" + question + "'" +
+                ", content='" + content + "'" +
                 ", sort='" + sort + "'" +
-                ", icon='" + icon + "'" +
                 '}';
     }
 }

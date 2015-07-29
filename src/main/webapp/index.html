@@ -23,11 +23,9 @@
 	<!--[if lt IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-	<div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div>
-	<div ui-view="navbar" ng-cloak=""></div>
-	<div class="container">
-		<div ui-view="content"></div>
-	</div>
+        
+		<div ui-view="content" style="display: initial;"></div>
+		<div ui-view="navbar" ng-cloak=""></div>
 
 	<!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
         <script>
@@ -69,14 +67,18 @@
 	<script src='bower_components/textAngular/dist/textAngular-sanitize.js'></script>
 	<script src='bower_components/textAngular/dist/textAngularSetup.js'></script>
 	<script src='bower_components/angular-filter/dist/angular-filter.js'></script>
+	<script src='bower_components/showdown/src/showdown.js'></script>
+	<script src='bower_components/angular-markdown-directive/markdown.js'></script>
+	<script src='bower_components/ng-pageslide/dist/angular-pageslide-directive.js'></script>
 	<!-- endbower -->
 	<!-- endbuild -->
-
+	<script src='/bower_components/showdown/src/extensions/table.js'></script>
 	<script
 		src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
 	<script
 		src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
 	<script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
+	
 	
 
 
@@ -147,22 +149,16 @@
 	<script src="scripts/components/auth/provider/auth.session.service.js"></script>
 	<script src="scripts/app/account/sessions/sessions.js"></script>
 	<script src="scripts/app/account/sessions/sessions.controller.js"></script>
-	<script src="scripts/app/entities/article/article.js"></script>
-	<script src="scripts/app/entities/article/article.controller.js"></script>
-	<script src="scripts/app/entities/article/article-dialog.controller.js"></script>
-	<script src="scripts/app/entities/article/article-detail.controller.js"></script>
-	<script src="scripts/components/entities/article/article.service.js"></script>
-	<script src="scripts/app/entities/category/category.js"></script>
-	<script src="scripts/app/entities/category/category.controller.js"></script>
-	<script
-		src="scripts/app/entities/category/category-dialog.controller.js"></script>
-	<script
-		src="scripts/app/entities/category/category-detail.controller.js"></script>
-	<script src="scripts/components/entities/category/category.service.js"></script>
-<script src="scripts/app/entities/category/category-dialog.controller.js"></script>
-<script src="scripts/app/entities/category/category-detail.controller.js"></script>
+<script src="scripts/app/entities/article/article.js"></script>
+<script src="scripts/app/entities/article/article.controller.js"></script>
+<script src="scripts/app/entities/article/article-dialog.controller.js"></script>
+<script src="scripts/app/entities/article/article-detail.controller.js"></script>
+<script src="scripts/components/entities/article/article.service.js"></script>
 	<!-- endbuild -->
 	
 	<script src='/assets/chessboardjs-0.3.0/js/chessboard-0.3.0.js'></script>
+	<script src='/assets/jqBootstrapValidation.js'></script>
+	<script src='/assets/contact_me.js'></script>
+	
 </body>
 </html>

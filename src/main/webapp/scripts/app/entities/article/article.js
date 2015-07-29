@@ -28,7 +28,7 @@ angular.module('jhipsterApp')
                 parent: 'entity',
                 url: '/article/{id}',
                 data: {
-                    roles: [],
+                    roles: ['ROLE_USER'],
                     pageTitle: 'jhipsterApp.article.detail.title'
                 },
                 views: {
@@ -60,7 +60,7 @@ angular.module('jhipsterApp')
                         size: 'lg',
                         resolve: {
                             entity: function () {
-                                return {title: null, date: null, shortDescription: null, longDescription: null, sort: null, icon: null, id: null};
+                                return {title: null, date: null, question: null, content: null, sort: null, id: null};
                             }
                         }
                     }).result.then(function(result) {
