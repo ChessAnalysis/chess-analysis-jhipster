@@ -25,10 +25,6 @@
 								Entities </span> <b class="caret"></b>
 					</span>
 				</a>
-					<ul class="dropdown-menu">
-<li ui-sref-active="active" ><a ui-sref="article"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.article">article</span></a></li>
-					</ul></li>
 				<li ng-class="{active: $state.includes('account')}"
 					class="dropdown pointer"><a class="dropdown-toggle"
 					data-toggle="dropdown" href=""> <span> <span
@@ -98,16 +94,22 @@
 	</div>
 </nav>-->
 
-<a id="menu-toggle" href="#" ng-click="toggleCustom()"
+<a ng-hide="checked" id="menu-toggle" ng-click="toggleCustom()"
 	class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
 
 <nav ng-show="checked" class="navbar" role="navigation">
-	<pageslide ps-open="checked"> <a id="menu-toggle" href="#"
+	<pageslide ps-open="checked"> <a id="menu-toggle"
 		ng-click="toggleCustom()" class="btn btn-dark btn-lg toggle"><i
 		class="fa fa-times"></i></a>
 	<div style="padding: 20px; display: block;" id="demo-right">
 		<h2></h2>
+		<ul>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 		<a href="#carousel">Insights</a>
+		
 	</div>
 	</pageslide>
 </nav>
