@@ -3,7 +3,7 @@
 angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascalprecht.translate', 
                                'ui.bootstrap', // for modal dialogs
                                'ngResource', 'ui.router', 'ngCookies', 'ngCacheBuster', 'infinite-scroll', 
-                               'textAngular', 'angular.filter', 'ngSanitize', 'btford.markdown', 'pageslide-directive']) // Our dependencies
+                               'textAngular', 'angular.filter', 'ngSanitize', 'btford.markdown', 'ngHamburger']) // Our dependencies
 
                                .run(function ($rootScope, $filter, $location, $window, $http, $state, $translate, Language, Auth, Principal, ENV, VERSION) {
                             	   $rootScope.ENV = ENV;

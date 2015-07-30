@@ -94,22 +94,12 @@
 	</div>
 </nav>-->
 
-<a ng-hide="checked" id="menu-toggle" ng-click="toggleCustom()"
-	class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<hamburger-toggle id="menu-toggle" ng-class="{open: tgState}" state="tgState"></hamburger-toggle>
 
-<nav ng-show="checked" class="navbar" role="navigation">
-	<pageslide ps-open="checked"> <a id="menu-toggle"
-		ng-click="toggleCustom()" class="btn btn-dark btn-lg toggle"><i
-		class="fa fa-times"></i></a>
-	<div style="padding: 20px; display: block;" id="demo-right">
-		<h2></h2>
-		<ul>
-			<li>test</li>
-			<li>test</li>
-			<li>test</li>
-		</ul>
-		<a href="#carousel">Insights</a>
-		
-	</div>
-	</pageslide>
-</nav>
+<div class="sidenav" ng-class="{open: tgState}">
+      <ul class="nav nav-pills nav-stacked">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+      </ul>
+    </div>

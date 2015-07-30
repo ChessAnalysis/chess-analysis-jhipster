@@ -10,11 +10,7 @@ angular.module('jhipsterApp')
             $state.go('home');
         };
         
-        $scope.checked = false;
-        $scope.toggleCustom = function() {
-        	console.log('coucou');
-            $scope.checked = $scope.checked === false ? true: false;
-        };
+        $scope.tgState = false;
         
     });
 
