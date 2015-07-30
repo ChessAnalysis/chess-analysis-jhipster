@@ -43,6 +43,7 @@ module.exports = function (config) {
             'main/webapp/bower_components/showdown/src/showdown.js',
             'main/webapp/bower_components/angular-markdown-directive/markdown.js',
             'main/webapp/bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.js',
+            'main/webapp/bower_components/angular-scroll/angular-scroll.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'main/webapp/scripts/app/app.js',

@@ -71,17 +71,52 @@
 
 
 <!-- Header -->
-<header id="top" class="header">
+<header>
 	<div class="text-vertical-center">
 		<h1>Large Scale Analysis of Chess Games</h1>
 		<h3>
 			5 millions of PGN games <br />270 millions of unique FEN positions
 		</h3>
-		<br>
-		<button ng-click="go('insights')" class="btn btn-dark btn-lg">Find
-			Out More</button>
 	</div>
 </header>
+
+<div id="sub-header">
+	<div class="callout">
+		<div class="row text-vertical-center">
+			<div class="col-md-4 col-md-offset-2">
+				<p>For researchers, data scientists, or hobbyists willing to
+				analyze millions of games, moves, and data analysis of computer
+				chess engines.</p>
+			<p>We provide all the resources: 5 millions of PGN games, 270
+				millions of unique FEN positions, tera-octets of analysis using
+				state-of-the-art chess engines and thousands of distributed machines
+				of the IGRIDA cluster, and tool-supported procedures to replicate
+				experiments or produce novel insights. All data and code are freely
+				available and open source!</p>
+			</div>
+			<div class="col-md-4">
+				<p>For chess players, people fascinated by the beauty and
+				complexity of the chess game, or simply curious people!</p>
+
+			<p>How many unique positions have been played? How many blunders
+				chess grand masters, amateurs, or world top players do? For which
+				moves mistakes are more prevalent? Was Kasparov better than Fisher
+				or Carlsen? All these questions can have an answer thanks to the
+				amount of games we have and the impressive skills of chess computer
+				engines. Explore and consult insights online (or challenge
+				scientists to discover new ones)!</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="bottom-header">
+	<div class="callout">
+		<div class="row text-vertical-center">
+			<a href="#insights" class="btn btn-dark btn-lg" du-smooth-scroll du-scrollspy>Find Out More</a>
+		</div>
+	</div>
+</div>
 
 
 <section id="insights">
@@ -123,7 +158,7 @@
 
 	<div id="comment-insight-bottom" class="callout">
 		<div class="text-vertical-center">
-			<a ng-click="go('motivations')"><span
+			<a href="#motivations" du-smooth-scroll du-scrollspy><span
 				class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
 		</div>
 	</div>
