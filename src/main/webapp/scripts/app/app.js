@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascalprecht.translate', 
+angular.module('jhipsterApp', ['LocalStorageModule', 
                                'ui.bootstrap', // for modal dialogs
-                               'ngResource', 'ui.router', 'ngCookies', 'ngCacheBuster', 'infinite-scroll', 
-                               'textAngular', 'angular.filter', 'ngSanitize', 'btford.markdown', 'ngHamburger', 'duScroll']) // Our dependencies
+                               'ngResource', 'ui.router', 'ngCookies', 'ngCacheBuster', 'infinite-scroll',
+                               'textAngular', 'angular.filter', 'ngSanitize', 'btford.markdown', 'ngHamburger', 'duScroll'])
 
-                               .run(function ($rootScope, $filter, $location, $window, $http, $state, $translate, Language, Auth, Principal, ENV, VERSION) {
+                               .run(function ($rootScope, $location, $window, $http, $state,  Auth, Principal, ENV, VERSION) {
                             	   $rootScope.ENV = ENV;
                             	   $rootScope.VERSION = VERSION;
                             	   $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {
@@ -19,7 +19,7 @@ angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
                             	   });
 
                             	   $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
-                            		   var titleKey = 'global.title' ;
+                            		   var titleKey = 'jhipster' ;
 
                             		   $rootScope.previousStateName = fromState.name;
                             		   $rootScope.previousStateParams = fromParams;
@@ -28,12 +28,7 @@ angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
                             		   if (toState.data.pageTitle) {
                             			   titleKey = toState.data.pageTitle;
                             		   }
-
-                            		   $translate(titleKey).then(function (title) {
-                            			   // Change window title with translated one
-                            			   $window.document.title = title;
-                            		   });
-
+                            		   $window.document.title = titleKey;
                             	   });
 
                             	   $rootScope.back = function() {
@@ -44,9 +39,7 @@ angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
                             			   $state.go($rootScope.previousStateName, $rootScope.previousStateParams);
                             		   }
                             	   };
-
                                })
-
                                .factory('authExpiredInterceptor', function ($rootScope, $q, $injector, localStorageService) {
                             	   return {
                             		   responseError: function(response) {
@@ -66,7 +59,7 @@ angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
                             		   }
                             	   };
                                })
-                               .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, $translateProvider, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider) {
+                               .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider,  httpRequestInterceptorCacheBusterProvider) {
 
                             	   //enable CSRF
                             	   $httpProvider.defaults.xsrfCookieName = 'CSRF-TOKEN';
@@ -89,34 +82,16 @@ angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
                             			               function (Auth) {
                             				   return Auth.authorize();
                             			   }
-                            			   ],
-                            			   translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                            				   $translatePartialLoader.addPart('global');
-                            			   }]
+                            			   ]
                             		   }
                             	   });
 
                             	   $httpProvider.interceptors.push('authExpiredInterceptor');
 
 
-                            	   // Initialize angular-translate
-                            	   $translateProvider.useLoader('$translatePartialLoader', {
-                            		   urlTemplate: 'i18n/{lang}/{part}.json'
-                            	   });
-
-                            	   $translateProvider.preferredLanguage('en');
-                            	   $translateProvider.useCookieStorage();
-                            	   $translateProvider.useSanitizeValueStrategy('escaped');
-
-                            	   tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
-                            	   tmhDynamicLocaleProvider.useCookieStorage();
-                            	   tmhDynamicLocaleProvider.storageKey('NG_TRANSLATE_LANG_KEY');
-
                                })
                                .config(['markdownConverterProvider', function (markdownConverterProvider) {
                             	   markdownConverterProvider.config({
                             		   extensions: ['table', 'chessboard']
                             	   });
-                               }]); 
-
-
+                               }]);

@@ -9,31 +9,4 @@ angular.module('jhipsterApp')
             Auth.logout();
             $state.go('home');
         };
-        
-        $scope.tgState = false;
-        
     });
-
-angular.module('jhipsterApp').filter("property", ["$filter", function($filter){
-    var parseString = function(input){
-        return input.split(".");
-    }
-
-    function getValue(element, propertyArray) {
-        var value = element;
-
-        angular.forEach(propertyArray, function(property) {
-            value = value[property];
-        });
-
-        return value;
-    }
-
-    return function (array, propertyString, target) {
-        var properties = parseString(propertyString);
-
-        return $filter('filter')(array, function(item){
-            return getValue(item, properties) == target;
-        });
-    }
-}]);
