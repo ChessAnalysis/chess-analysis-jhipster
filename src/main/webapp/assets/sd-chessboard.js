@@ -1,0 +1,18 @@
+(function(){
+    var chessboard = function(converter) {
+        return [
+            {
+              type    : 'lang',
+              regex   : '\\{(\\w+\\/\\w+\\/\\w+\\/\\w+\\/\\w+\\/\\w+\\/\\w+\\/\\w+)\\}',
+              replace : function(match, fen) {
+                  return '<div id="board" class="' + fen + '" style="width: 400px"></div>';
+              }
+            }
+        ];
+    };
+
+    // Client-side export
+    if (typeof window !== 'undefined' && window.Showdown && window.Showdown.extensions) { window.Showdown.extensions.chessboard = chessboard; }
+    // Server-side export
+    if (typeof module !== 'undefined') module.exports = chessboard;
+}());

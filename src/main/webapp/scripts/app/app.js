@@ -115,7 +115,7 @@ angular.module('jhipsterApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
                                })
                                .config(['markdownConverterProvider', function (markdownConverterProvider) {
                             	   markdownConverterProvider.config({
-                            		   extensions: ['table']
+                            		   extensions: ['table', 'chessboard']
                             	   });
                                }]); 
 
