@@ -3,7 +3,13 @@
 angular.module('jhipsterApp', ['LocalStorageModule', 
                                'ui.bootstrap', // for modal dialogs
                                'ngResource', 'ui.router', 'ngCookies', 'ngCacheBuster', 'infinite-scroll',
-                               'textAngular', 'angular.filter', 'ngSanitize', 'btford.markdown', 'ngHamburger', 'duScroll'])
+                               'textAngular',
+                               'angular.filter',
+                               'ngSanitize',
+                               'btford.markdown',
+                               'ngHamburger',
+                               'duScroll',
+                               'angular-loading-bar'])
 
                                .run(function ($rootScope, $location, $window, $http, $state,  Auth, Principal, ENV, VERSION) {
                             	   $rootScope.ENV = ENV;
@@ -15,6 +21,8 @@ angular.module('jhipsterApp', ['LocalStorageModule',
                             		   if (Principal.isIdentityResolved()) {
                             			   Auth.authorize();
                             		   }
+
+
 
                             	   });
 
@@ -40,6 +48,11 @@ angular.module('jhipsterApp', ['LocalStorageModule',
                             		   }
                             	   };
                                })
+                               .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+                            	   cfpLoadingBarProvider.includeSpinner = true;
+                            	   cfpLoadingBarProvider.includeBar = true;
+                            	   cfpLoadingBarProvider.latencyThreshold = 500;
+                               }])
                                .factory('authExpiredInterceptor', function ($rootScope, $q, $injector, localStorageService) {
                             	   return {
                             		   responseError: function(response) {

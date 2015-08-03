@@ -41,6 +41,10 @@ module.exports = function (config) {
             'main/webapp/bower_components/angular-markdown-directive/markdown.js',
             'main/webapp/bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.js',
             'main/webapp/bower_components/angular-scroll/angular-scroll.js',
+            'main/webapp/bower_components/fullpage.js/jquery.fullPage.js',
+            'main/webapp/bower_components/fullpage.js/vendors/jquery.easings.min.js',
+            'main/webapp/bower_components/fullpage.js/vendors/jquery.slimscroll.min.js',
+            'main/webapp/bower_components/angular-loading-bar/build/loading-bar.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'main/webapp/scripts/app/app.js',

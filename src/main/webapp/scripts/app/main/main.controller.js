@@ -7,29 +7,29 @@ angular.module('jhipsterApp')
             $scope.isAuthenticated = Principal.isAuthenticated;
         });
         
+        $scope.moveSectionDown = function() {
+        	$.fn.fullpage.moveSectionDown();
+        }
         
-        $('.carousel').carousel({
-    		interval: 50000
-    	})
-
-    	$scope.prevItem = function() {
-    		$('.carousel').carousel('prev');
-    	}
-
-    	$scope.nextItem = function() {
-    		$('.carousel').carousel('next');
-    	}
 
     	var waitForRenderAndDoSomething = function() {
     		if($http.pendingRequests.length > 0) {
     			$timeout(waitForRenderAndDoSomething); // Wait for all templates to be loaded
     		} else {
-    			$('.carousel table').addClass('table');
     			
+    			angular.element("#fullpage").fullpage({
+    				'verticalCentered': false,
+    				'css3': true,
+    				'navigation': true,
+    				'navigationPosition': 'right',
+    				'navigationTooltips': ['Home', 'Insights', 'Motivations', 'Contact'],
+    			});
+    			
+    			$('.md table').addClass('table');
     			var board = angular.element(document.querySelector( '#board' ));
     			ChessBoard('board', board.attr('class'));
     		}
     	}
-    	$timeout(waitForRenderAndDoSomething); // Waits for first digest cycle
+    	$timeout(waitForRenderAndDoSomething); // Waits for first digest cycle*/
     	
     });

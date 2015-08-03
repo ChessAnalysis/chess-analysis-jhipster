@@ -376,7 +376,7 @@ header {
 	-o-background-size: cover;
 }
 
-.carousel-inner img {
+.md img {
 	width: 400px;
 	height: 400px;
 }
@@ -1352,4 +1352,10 @@ translate3d
 }
 .tag:after{
   right: -1000px;
+}
+
+.md {
+	width: 70%;
+	margin: 0 15%;
+	text-align:center;
 }
