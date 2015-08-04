@@ -10,6 +10,15 @@ angular.module('jhipsterApp')
 	$scope.moveSectionDown = function() {
 		$.fn.fullpage.moveSectionDown();
 	}
+	
+	$http.get('/api/service/getMdFiles').
+	  then(function(response) {
+	    $scope.mdFiles = response.data;
+	    
+	  }, function(response) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	  });
 
 
 	var waitForRenderAndDoSomething = function() {

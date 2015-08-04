@@ -47,23 +47,8 @@
 		</div>
 	</div>
 	<div class="section">
-		<div class="slide">
-			<div class="md" btf-markdown ng-include
-				src="'/assets/resources/Distribution_of_Elo_Ratings.md'"></div>
-		</div>
-		<div class="slide">
-			<div class="md" btf-markdown
-				ng-include="'/assets/resources/Ply_per_Game.md'"></div>
-		</div>
-		<div class="slide">
-			<div class="md" btf-markdown
-				ng-include="'/assets/resources/Percentage_Game_Win_by_Higher_Elo_Rating.md'">
-			</div>
-		</div>
-		<div class="slide">
-			<div class="md" btf-markdown
-				ng-include="'/assets/resources/Opening.md'">
-			</div>
+		<div class="slide" ng-repeat="md in mdFiles">
+			<div class="md" btf-markdown ng-include="md"></div>
 		</div>
 	</div>
 	<div class="section">
