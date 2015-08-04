@@ -5,7 +5,7 @@
               type    : 'lang',
               regex   : '\\{(\\w+\\/\\w+\\/\\w+\\/\\w+\\/\\w+\\/\\w+\\/\\w+\\/\\w+)\\}',
               replace : function(match, fen) {
-                  return '<div id="board" class="' + fen + '" style="width: 400px"></div>';
+                  return '<div class="board" id="' + fen + '" style="width: 400px"></div>';
               }
             }
         ];
