@@ -37,13 +37,31 @@
 /* white square */
 .white-1e1d7 {
   background-color: #f0d9b5;
+  -webkit-print-color-adjust: exact; 
   color: #b58863;
 }
 
 /* black square */
 .black-3c85d {
   background-color: #b58863;
+  -webkit-print-color-adjust: exact; 
   color: #f0d9b5;
+}
+
+@media print {
+/* white square */
+.white-1e1d7 {
+  background-color: #f0d9b5 !important;
+  -webkit-print-color-adjust: exact; 
+  color: #b58863;
+}
+
+/* black square */
+.black-3c85d {
+  background-color: #b58863 !important;
+  -webkit-print-color-adjust: exact; 
+  color: #f0d9b5;
+}
 }
 
 /* highlighted square */
