@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('jhipsterApp')
-.controller('MainController', function ($scope, Principal, $timeout, $http) {
+.controller('RapportController', function ($scope, Principal, $timeout, $http) {
 	Principal.identity().then(function(account) {
 		$scope.account = account;
 		$scope.isAuthenticated = Principal.isAuthenticated;
@@ -23,16 +23,8 @@ angular.module('jhipsterApp')
 
 	var waitForRenderAndDoSomething = function() {
 		if($http.pendingRequests.length > 0) {
-			$timeout(waitForRenderAndDoSomething);
+			$timeout(waitForRenderAndDoSomething); // Wait for all templates to be loaded
 		} else {
-
-			angular.element("#fullpage").fullpage({
-				'verticalCentered': false,
-				'css3': true,
-				'navigation': true,
-				'navigationPosition': 'right',
-				'navigationTooltips': ['Home', 'Insights', 'Motivations', 'Contact'],
-			});
 
 			$('.md table').addClass('table');
 
@@ -48,6 +40,6 @@ angular.module('jhipsterApp')
 
 		}
 	}
-	$timeout(waitForRenderAndDoSomething);
+	$timeout(waitForRenderAndDoSomething); // Waits for first digest cycle*/
 
 });

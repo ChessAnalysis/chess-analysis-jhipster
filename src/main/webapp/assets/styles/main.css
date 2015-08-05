@@ -1363,3 +1363,10 @@ translate3d
 #fp-nav {
 	top:30%;	
 }
+
+.board {
+	/* width: 70%;
+	margin: 0 15%; */
+	width: 640px;
+	margin: 0 auto;
+}
