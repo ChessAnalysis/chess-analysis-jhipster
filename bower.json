@@ -11,7 +11,6 @@
     "angular-bootstrap": "0.13.0",
     "angular-ui-router": "0.2.13",
     "angular": "1.4.0",
-    "angular-resource": "1.4.0",
     "angular-cookies": "1.4.0",
     "angular-sanitize": "1.4.0",
     "angular-dynamic-locale": "0.1.27",
@@ -25,7 +24,9 @@
     "angular-hamburger-toggle": "~0.2.0",
     "angular-scroll": "~0.7.1",
     "fullpage.js": "~2.6.7",
-    "angular-loading-bar": "~0.8.0"
+    "angular-loading-bar": "~0.8.0",
+    "angular-resource": "~1.4.3",
+    "pdfjs-dist": "~1.1.366"
   },
   "devDependencies": {
     "angular-mocks": "1.4.0",

@@ -19,7 +19,6 @@ module.exports = function (config) {
             'main/webapp/bower_components/angular/angular.js',
             'main/webapp/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
             'main/webapp/bower_components/angular-ui-router/release/angular-ui-router.js',
-            'main/webapp/bower_components/angular-resource/angular-resource.js',
             'main/webapp/bower_components/angular-cookies/angular-cookies.js',
             'main/webapp/bower_components/angular-sanitize/angular-sanitize.js',
             'main/webapp/bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js',
@@ -45,6 +44,9 @@ module.exports = function (config) {
             'main/webapp/bower_components/fullpage.js/vendors/jquery.easings.min.js',
             'main/webapp/bower_components/fullpage.js/vendors/jquery.slimscroll.min.js',
             'main/webapp/bower_components/angular-loading-bar/build/loading-bar.js',
+            'main/webapp/bower_components/angular-resource/angular-resource.js',
+            'main/webapp/bower_components/pdfjs-dist/build/pdf.js',
+            'main/webapp/bower_components/pdfjs-dist/build/pdf.worker.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'main/webapp/scripts/app/app.js',

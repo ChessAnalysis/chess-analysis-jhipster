@@ -376,10 +376,7 @@ header {
 	-o-background-size: cover;
 }
 
-.md img {
-	width: 400px;
-	height: 400px;
-}
+
 
 .carousel-caption {
 	right: 0;
@@ -1360,13 +1357,21 @@ translate3d
 	text-align:center;
 }
 
+.md img {
+	max-width: 640px;
+}
+
 #fp-nav {
 	top:30%;	
 }
 
-.board {
+.board, .plotImg {
 	/* width: 70%;
 	margin: 0 15%; */
 	width: 640px;
 	margin: 0 auto;
+}	
+
+.fp-slides .plotImg {
+	display: none;
 }

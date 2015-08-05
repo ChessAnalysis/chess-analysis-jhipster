@@ -33,11 +33,6 @@ angular.module('jhipsterApp')
 				ChessBoard(a.attr('id') , a.attr('id'));
 			});
 
-			angular.forEach(angular.element(".plot"), function(value, key){
-				var a = angular.element(value);
-				a.append('<iframe width="640" height="480" frameborder="0" seamless="seamless" scrolling="no" src="https://plot.ly/~' + a.attr('id') + '/.embed?width=640&height=480"></iframe>');
-			});
-
 		}
 	}
 	$timeout(waitForRenderAndDoSomething); // Waits for first digest cycle*/
