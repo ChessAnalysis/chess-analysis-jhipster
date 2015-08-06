@@ -25,6 +25,11 @@ angular.module('jhipsterApp')
 		if($http.pendingRequests.length > 0) {
 			$timeout(waitForRenderAndDoSomething);
 		} else {
+			
+			angular.forEach(angular.element(".md"), function(value, key) {
+				var a = angular.element(value);
+				a.find('h2').append(' <a href="/#/article/' + a.attr('ng-param').split('/')[3] + '" class="btn-lg"><span class="glyphicon glyphicon-zoom-in"></span></a>');
+			});
 
 			angular.element("#fullpage").fullpage({
 				'verticalCentered': false,
@@ -34,16 +39,16 @@ angular.module('jhipsterApp')
 				'navigationTooltips': ['Home', 'Insights', 'Motivations', 'Contact'],
 			});
 
-			$('.md table').addClass('table');
+			angular.element('.md table').addClass('table');
 
-			angular.forEach(angular.element(".board"), function(value, key){
+			angular.forEach(angular.element(".board"), function(value, key) {
 				var a = angular.element(value);
 				ChessBoard(a.attr('id') , a.attr('id'));
 			});
 
-			angular.forEach(angular.element(".plot"), function(value, key){
+			angular.forEach(angular.element(".plot"), function(value, key) {
 				var a = angular.element(value);
-				a.append('<iframe width="640" height="480" frameborder="0" seamless="seamless" scrolling="no" src="https://plot.ly/~' + a.attr('id') + '/.embed?width=640&height=480"></iframe>');
+				a.append('<iframe width="500" height="400" frameborder="0" seamless="seamless" scrolling="no" src="https://plot.ly/~' + a.attr('id') + '/.embed?width=500&height=400"></iframe>');
 			});
 
 		}

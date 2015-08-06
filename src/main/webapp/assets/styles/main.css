@@ -346,55 +346,22 @@ header {
 }
 
 #insights {
-	height: 100%;
-}
-
-#motivations {
-	padding: 100px 0;
-}
-
-.carousel, .item, .active {
-	height: 80%;
-}
-
-.carousel>.row, .carousel>.row>div {
-	height: 100%;
-}
-
-.carousel-inner {
-	height: 100%;
-}
-
-/* Background images are set within the HTML using inline CSS, not here */
-.fill {
-	width: 100%;
-	height: 80%;
-	background-position: center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-	-o-background-size: cover;
-}
-
-
-
-.carousel-caption {
-	right: 0;
-	left: 0;
-	padding-bottom: 0;
-}
-
-.carousel {
 	background: #fff;
 }
 
-.carousel-inner>div {
-	height: 100%;
+.fp-controlArrow.fp-prev {
+	border-color: transparent #5E7D9C transparent transparent !important;
 }
 
-.item>div {
+.fp-controlArrow.fp-next {
+	border-color: transparent transparent transparent #5E7D9C !important;
+}
+
+
+#motivations {
+	padding: 100px 0;
+	background: #fff;
 	height: 100%;
-	overflow-y: scroll;
 }
 
 #comment-insight {
@@ -1365,13 +1332,17 @@ translate3d
 	top:30%;	
 }
 
-.board, .plotImg {
-	/* width: 70%;
-	margin: 0 15%; */
-	width: 640px;
-	margin: 0 auto;
-}	
+.plot, .board, .slide img {
+    max-width: 100%;
+    width: 380px;
+    margin: 0 auto;
+    display: block;
+}
 
 .fp-slides .plotImg {
 	display: none;
+}
+
+.btn-abs {
+
 }

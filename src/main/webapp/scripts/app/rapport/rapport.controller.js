@@ -2,14 +2,6 @@
 
 angular.module('jhipsterApp')
 .controller('RapportController', function ($scope, Principal, $timeout, $http) {
-	Principal.identity().then(function(account) {
-		$scope.account = account;
-		$scope.isAuthenticated = Principal.isAuthenticated;
-	});
-
-	$scope.moveSectionDown = function() {
-		$.fn.fullpage.moveSectionDown();
-	}
 	
 	var styleSheets = document.styleSheets;
 	for (var i = 0; i < styleSheets.length; i++) {
@@ -23,7 +15,6 @@ angular.module('jhipsterApp')
     	   console.log('disabled !!');
        }
     }
-	console.log(styleSheets);
 	
 	$http.get('/api/service/getMdFiles').
 	  then(function(response) {
