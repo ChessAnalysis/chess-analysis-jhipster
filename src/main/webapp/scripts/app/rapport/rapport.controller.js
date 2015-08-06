@@ -11,6 +11,20 @@ angular.module('jhipsterApp')
 		$.fn.fullpage.moveSectionDown();
 	}
 	
+	var styleSheets = document.styleSheets;
+	for (var i = 0; i < styleSheets.length; i++) {
+		if(styleSheets[i].href != null) {
+			console.log(styleSheets[i].href.indexOf("bower_components"));
+		}
+       if(styleSheets[i].href != null && 
+    		   (styleSheets[i].href.indexOf("bower_components") > -1
+    				   || styleSheets[i].href.indexOf("main.css") > -1)) {
+    	   styleSheets[i].disabled = true;
+    	   console.log('disabled !!');
+       }
+    }
+	console.log(styleSheets);
+	
 	$http.get('/api/service/getMdFiles').
 	  then(function(response) {
 	    $scope.mdFiles = response.data;

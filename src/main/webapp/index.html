@@ -10,16 +10,15 @@
 <!-- build:css assets/styles/vendor.css -->
 <!-- bower:css -->
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-<link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css" />
 <link rel="stylesheet" href="bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.css" />
 <link rel="stylesheet" href="bower_components/fullpage.js/jquery.fullPage.css" />
 <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+<link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
 <!-- endbower -->
 <!-- endbuild -->
-<link rel="stylesheet" href="/assets/chessboardjs-0.3.0/css/chessboard-0.3.0.css" />
+<link rel="stylesheet" href="/assets/chessboardjs-0.3.0/css/chessboard-0.3.0.css" media="all" />
 <!-- build:css assets/styles/main.css -->
-<link rel="stylesheet" href="assets/styles/main.css">
+<link rel="stylesheet" href="assets/styles/main.css" media="all">
 <!-- endbuild -->
 </head>
 <body ng-app="jhipsterApp">
@@ -56,15 +55,6 @@
 	<script src='bower_components/angular-cache-buster/angular-cache-buster.js'></script>
 	<script src='bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js'></script>
 	<script src='bower_components/angular-redactor/angular-redactor.js'></script>
-	<script src='bower_components/rangy/rangy-core.js'></script>
-	<script src='bower_components/rangy/rangy-classapplier.js'></script>
-	<script src='bower_components/rangy/rangy-highlighter.js'></script>
-	<script src='bower_components/rangy/rangy-selectionsaverestore.js'></script>
-	<script src='bower_components/rangy/rangy-serializer.js'></script>
-	<script src='bower_components/rangy/rangy-textrange.js'></script>
-	<script src='bower_components/textAngular/dist/textAngular.js'></script>
-	<script src='bower_components/textAngular/dist/textAngular-sanitize.js'></script>
-	<script src='bower_components/textAngular/dist/textAngularSetup.js'></script>
 	<script src='bower_components/angular-filter/dist/angular-filter.js'></script>
 	<script src='bower_components/showdown/src/showdown.js'></script>
 	<script src='bower_components/angular-markdown-directive/markdown.js'></script>
@@ -81,13 +71,9 @@
 	
 	
 	<script src='/bower_components/showdown/src/extensions/table.js'></script>
+	<script src='/assets/sanitize.js'></script>
 	<script src='/assets/sd-chessboard.js'></script>
 	<script src='/assets/sd-plotly.js'></script>
-	<script
-		src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
-	<script
-		src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
-	<script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
 	
 	
 
@@ -161,9 +147,6 @@
 	
 	<script src="scripts/app/rapport/rapport.js"></script>
 	<script src="scripts/app/rapport/rapport.controller.js"></script>
-	
-	<script src="scripts/app/rapport/rapportPDF.js"></script>
-	<script src="scripts/app/rapport/rapportPDF.controller.js"></script>
 	
 	<script src='/assets/chessboardjs-0.3.0/js/chessboard-0.3.0.js'></script>
 	<script src='/assets/jqBootstrapValidation.js'></script>

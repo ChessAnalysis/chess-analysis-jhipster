@@ -5,7 +5,7 @@
               type    : 'lang',
               regex   : '\\{\\{plot\\-(\\d+)\\}\\}',
               replace : function(match, idplot) {
-                  return '<div class="plot" id="fresnault/' + idplot + '"></div><img class="plotImg" src="https://plot.ly/~fresnault/94.png" />';
+                  return '<div class="plot" id="fresnault/' + idplot + '"></div><img class="plotImg" src="https://plot.ly/~fresnault/' + idplot + '.png" />';
               }
             }
         ];

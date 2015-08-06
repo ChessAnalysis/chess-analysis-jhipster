@@ -3,7 +3,6 @@
 angular.module('jhipsterApp', ['LocalStorageModule', 
                                'ui.bootstrap', // for modal dialogs
                                'ngResource', 'ui.router', 'ngCookies', 'ngCacheBuster', 'infinite-scroll',
-                               'textAngular',
                                'angular.filter',
                                'ngSanitize',
                                'btford.markdown',
