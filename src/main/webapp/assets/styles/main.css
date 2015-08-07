@@ -1339,7 +1339,7 @@ translate3d
     display: block;
 }
 
-.fp-slides .plotImg {
+.fp-slides .plotImg, #article .plotImg {
 	display: none;
 }
 

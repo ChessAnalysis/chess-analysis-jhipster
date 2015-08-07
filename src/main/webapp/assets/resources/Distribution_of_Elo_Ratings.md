@@ -1,6 +1,6 @@
 ## Distribution of Elo Ratings ##
 
-![image](assets/resources/images/1-EloRating.png)
+{{plot-10}}
 
 As you can see, most records come from tournament games with high Elo Rating.
 I underline players with >2000 Elo rating are experts in Chess. With about 5 millions of games listed, we’ll obtain accurate results.

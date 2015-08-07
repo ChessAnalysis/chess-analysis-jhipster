@@ -17,6 +17,11 @@ angular.module('jhipsterApp')
 				var a = angular.element(value);
 				ChessBoard(a.attr('id') , a.attr('id'));
 			});
+			
+			angular.forEach(angular.element(".plot"), function(value, key) {
+				var a = angular.element(value);
+				a.append('<iframe width="500" height="400" frameborder="0" seamless="seamless" scrolling="no" src="https://plot.ly/~' + a.attr('id') + '/.embed?width=500&height=400"></iframe>');
+			});
 
 		}
 	}
