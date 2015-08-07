@@ -1346,3 +1346,9 @@ translate3d
 .btn-abs {
 
 }
+
+.canvas {
+	width: 600px !important;
+	height: 400px !important;
+	margin: 0 auto;
+}

@@ -38,6 +38,8 @@ module.exports = function (config) {
             'main/webapp/bower_components/angular-resource/angular-resource.js',
             'main/webapp/bower_components/pdfjs-dist/build/pdf.js',
             'main/webapp/bower_components/pdfjs-dist/build/pdf.worker.js',
+            'main/webapp/bower_components/Chart.js/Chart.js',
+            'main/webapp/bower_components/angular-chart.js/dist/angular-chart.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'main/webapp/scripts/app/app.js',
