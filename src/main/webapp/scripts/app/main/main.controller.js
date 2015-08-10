@@ -10,22 +10,22 @@ angular.module('jhipsterApp')
 	$scope.moveSectionDown = function() {
 		$.fn.fullpage.moveSectionDown();
 	}
-	
+
 	$http.get('/api/service/getMdFiles').
-	  then(function(response) {
-	    $scope.mdFiles = response.data;
-	    
-	  }, function(response) {
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
-	  });
+	then(function(response) {
+		$scope.mdFiles = response.data;
+
+	}, function(response) {
+		// called asynchronously if an error occurs
+		// or server returns response with an error status.
+	});
 
 
 	var waitForRenderAndDoSomething = function() {
 		if($http.pendingRequests.length > 0) {
 			$timeout(waitForRenderAndDoSomething);
 		} else {
-			
+
 			angular.forEach(angular.element(".md"), function(value, key) {
 				var a = angular.element(value);
 				a.find('h2').append(' <a href="/#/article/' + a.attr('ng-param').split('/')[3] + '" class="btn-lg"><span class="glyphicon glyphicon-zoom-in"></span></a>');
@@ -36,7 +36,7 @@ angular.module('jhipsterApp')
 				'css3': true,
 				'navigation': true,
 				'navigationPosition': 'right',
-				'navigationTooltips': ['Home', 'Insights', 'Motivations', 'Contact'],
+				'navigationTooltips': ['Home', 'Insights', 'Motivations', 'Documentation'],
 			});
 
 			angular.element('.md table').addClass('table');

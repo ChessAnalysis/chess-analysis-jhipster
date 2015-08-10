@@ -1,6 +1,6 @@
 <div id="fullpage">
 	<div class="section">
-		<header>
+		<header id="top-home">
 			<div class="ng-enter text-vertical-center">
 				<h1>Large Scale Analysis of Chess Games</h1>
 				<h3>
@@ -40,7 +40,7 @@
 		<div id="bottom-header">
 			<div class="callout">
 				<div class="row text-vertical-center">
-					<a ng-click="moveSectionDown()" class="btn btn-dark btn-lg">Find
+					<a ng-click="moveSectionDown()" class="wow bounceIn btn btn-dark btn-lg">Find
 						Out More</a>
 				</div>
 			</div>
@@ -64,8 +64,7 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-4 text-center">
 						<div class="service-box">
-							<i class="fa fa-4x fa-history wow bounceIn text-primary"
-								style="visibility: visible; animation-name: bounceIn;"></i>
+							<i class="fa fa-4x fa-history wow bounceIn text-primary"></i>
 							<h3>Blunders Detection</h3>
 							<p class="text-muted">Determination of key moments chess
 								players blunder</p>
@@ -73,9 +72,7 @@
 					</div>
 					<div class="col-lg-4 col-md-4 text-center">
 						<div class="service-box">
-							<i class="fa fa-4x fa-line-chart wow bounceIn text-primary"
-								data-wow-delay=".1s"
-								style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;"></i>
+							<i class="fa fa-4x fa-line-chart wow bounceIn text-primary"></i>
 							<h3>Calculate Intrinsic Strength</h3>
 							<p class="text-muted">Who are the best chess players in
 								history ?</p>
@@ -83,9 +80,7 @@
 					</div>
 					<div class="col-lg-4 col-md-4 text-center">
 						<div class="service-box">
-							<i class="fa fa-4x fa-user-secret wow bounceIn text-primary"
-								data-wow-delay=".2s"
-								style="visibility: visible; animation-delay: 0.2s; animation-name: bounceIn;"></i>
+							<i class="fa fa-4x fa-user-secret wow bounceIn text-primary"></i>
 							<h3>Cheat Detection</h3>
 							<p class="text-muted"></p>
 						</div>
@@ -100,88 +95,67 @@
 
 				<p>You are invited to contribute to the project.</p>
 				<ul class="list-unstyled">
-					<li><i class="fa fa-2x fa-angle-right wow bounceIn text-primary"></i> If you notice an error in the documentation, please edit
-						the corresponding file</li>
-					<li><i class="fa fa-2x fa-angle-right wow bounceIn text-primary"></i> If you have an issue, please use the <a
+					<li><i
+						class="fa fa-2x fa-angle-right wow bounceIn text-primary"></i> If
+						you notice an error in the documentation, please edit the
+						corresponding file</li>
+					<li><i
+						class="fa fa-2x fa-angle-right wow bounceIn text-primary"></i> If
+						you have an issue, please use the <a
 						href="https://github.com/fresnault/jhipster-chess-analysis/issues">github
-							issues service</a> or contact us
-					</li>
-					<li><i class="fa fa-2x fa-angle-right wow bounceIn text-primary"></i> If you want to add an hindsight, you can add your markdown
-						file and make a pull request.</li>
+							issues service</a> or contact us</li>
+					<li><i
+						class="fa fa-2x fa-angle-right wow bounceIn text-primary"></i> If
+						you want to add an hindsight, you can add your markdown file and
+						make a pull request.</li>
 				</ul>
 			</div>
 		</section>
 
 	</div>
-	<!-- <div class="section">
-		<section id="contact">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 text-center">
-						<h2>Contact Me</h2>
-						<hr class="star-primary">
-					</div>
+	<div id="features" class="section">
+		<header class="style1">
+			<h2>Chess Documentation</h2>
+		</header>
+		<div class="feature-list container">
+			<div class="row">
+				<div class="col-md-6">
+					<section>
+						<h3><i class="fa fa-4x fa-pencil-square-o wow bounceIn text-danger"></i> PGN Format</h3>
+						<p>Eget mattis at, laoreet vel et velit aliquam diam ante,
+							aliquet sit amet vulputate. Eget mattis at, laoreet vel velit
+							lorem.</p>
+					</section>
 				</div>
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<form name="sentMessage" id="contactForm" novalidate="">
-							<div class="row control-group">
-								<div
-									class="form-group col-xs-12 floating-label-form-group controls">
-									<label>Name</label> <input type="text" class="form-control"
-										placeholder="Name" id="name" required=""
-										data-validation-required-message="Please enter your name."
-										aria-invalid="false">
-									<p class="help-block text-danger"></p>
-								</div>
-							</div>
-							<div class="row control-group">
-								<div
-									class="form-group col-xs-12 floating-label-form-group controls">
-									<label>Email Address</label> <input type="email"
-										class="form-control" placeholder="Email Address" id="email"
-										required=""
-										data-validation-required-message="Please enter your email address."
-										aria-invalid="false">
-									<p class="help-block text-danger"></p>
-								</div>
-							</div>
-							<div class="row control-group">
-								<div
-									class="form-group col-xs-12 floating-label-form-group controls">
-									<label>Phone Number</label> <input type="tel"
-										class="form-control" placeholder="Phone Number" id="phone"
-										required=""
-										data-validation-required-message="Please enter your phone number."
-										aria-invalid="false">
-									<p class="help-block text-danger"></p>
-								</div>
-							</div>
-							<div class="row control-group">
-								<div
-									class="form-group col-xs-12 floating-label-form-group controls">
-									<label>Message</label>
-									<textarea rows="5" class="form-control" placeholder="Message"
-										id="message" required=""
-										data-validation-required-message="Please enter a message."
-										aria-invalid="false"></textarea>
-									<p class="help-block text-danger"></p>
-								</div>
-							</div>
-							<br>
-							<div id="success"></div>
-							<div class="row">
-								<div class="form-group col-xs-12">
-									<button type="submit" class="btn btn-success btn-lg">Send</button>
-								</div>
-							</div>
-						</form>
-					</div>
+				<div class="col-md-6">
+					<section>
+						<h3><i class="fa fa-4x fa-file-text-o wow bounceIn text-danger"></i> FEN Notation</h3>
+						<p>Eget mattis at, laoreet vel et velit aliquam diam ante,
+							aliquet sit amet vulputate. Eget mattis at, laoreet vel velit
+							lorem.</p>
+					</section>
 				</div>
 			</div>
-		</section> -->
-</div>
-<div class="section"></div>
+			<div class="row">
+				<div class="col-md-6">
+					<section>
+						<h3><i class="fa fa-4x fa-calculator wow bounceIn text-danger"></i> Igrida Cluster</h3>
+						<p>Eget mattis at, laoreet vel et velit aliquam diam ante,
+							aliquet sit amet vulputate. Eget mattis at, laoreet vel velit
+							lorem.</p>
+					</section>
+				</div>
+				<div class="col-md-6">
+					<section>
+						<h3><i class="fa fa-4x fa-object-group wow bounceIn text-danger"></i> Chess Parser</h3>
+						<p>Eget mattis at, laoreet vel et velit aliquam diam ante,
+							aliquet sit amet vulputate. Eget mattis at, laoreet vel velit
+							lorem.</p>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 

@@ -108,4 +108,5 @@ angular.module('jhipsterApp', ['LocalStorageModule',
                             	   markdownConverterProvider.config({
                             		   extensions: ['table', 'chessboard', 'plotly']
                             	   });
-                               }]);
+                               }])
+                               ;
