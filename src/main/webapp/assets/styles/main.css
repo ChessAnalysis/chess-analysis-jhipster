@@ -305,7 +305,7 @@ header {
 }
 
 header {
-	background: #fff no-repeat center center scroll;
+	background-color: #fff;
 }
 
 #sub-header {
@@ -357,11 +357,64 @@ header {
 	border-color: transparent transparent transparent #5E7D9C !important;
 }
 
+.section, header, #sub-header, #bottom-header, #motivations, #contrib {
+    margin: 0;
+    overflow: hidden;
+    box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
+    text-align: center;
+    background-image: url("../images/overlay.png");
+}
+
 
 #motivations {
-	padding: 100px 0;
-	background: #fff;
-	height: 100%;
+	padding: 50px 0;
+	background-color: #fff;
+	height: 50%;
+}
+
+#motivations h2 {
+	padding-bottom: 20px;
+}
+
+#contrib {
+	padding: 50px 0;
+	height: 50%;
+	text-align: left;
+	background-color: #ecf1f1;
+}
+
+#contrib > div {
+	background: url('../images/gitHub.png') no-repeat;
+	background-size: 256px 256px;
+	background-position: 90%;
+}
+
+#contrib h2 {
+	font-size: 1.7em;
+	text-transform: uppercase;
+	padding-bottom: 20px;
+}
+
+#contrib p {
+	font-size: 1.3em;
+}
+
+#contrib ul li {
+    padding: 0.7em 0 0.7em 15px;
+    font-size: 1.2em;
+	border-bottom: solid 2px #e2e6e8;
+	width: 60%;
+}
+
+#contrib ul li:first-child {
+    padding-top: 0 !important;
+    border-top: 0 !important;
+    background-position: 0 0.3em;
+}
+
+#contrib ul li:last-child {
+    padding-bottom: 0 !important;
+    border-bottom: 0 !important;
 }
 
 #comment-insight {

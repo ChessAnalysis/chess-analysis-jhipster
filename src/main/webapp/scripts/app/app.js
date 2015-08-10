@@ -9,7 +9,8 @@ angular.module('jhipsterApp', ['LocalStorageModule',
                                'ngHamburger',
                                'duScroll',
                                'angular-loading-bar',
-                               'chart.js'])
+                               'chart.js',
+                               'ngAnimate'])
 
                                .run(function ($rootScope, $location, $window, $http, $state,  Auth, Principal, ENV, VERSION) {
                             	   $rootScope.ENV = ENV;
