@@ -2,6 +2,8 @@
 
 angular.module('jhipsterApp')
 .controller('ArticleController', function ($scope, Principal, $timeout, $http, $stateParams) {
+	
+	$.fn.fullpage.destroy('all');
 
 	console.log($stateParams.article);
 	$scope.md = "/assets/resources/ " + $stateParams.article;

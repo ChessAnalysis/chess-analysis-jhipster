@@ -345,8 +345,8 @@ header {
 	-o-background-size: cover;
 }
 
-#insights {
-	background: #fff;
+#hindsights {
+	background-color: #D5E1E2;
 }
 
 .fp-controlArrow.fp-prev {
@@ -1334,7 +1334,7 @@ translate3d
 
 .plot, .board, .slide img {
     max-width: 100%;
-    width: 380px;
+    width: 500px;
     margin: 0 auto;
     display: block;
 }
@@ -1347,8 +1347,36 @@ translate3d
 
 }
 
-.canvas {
+#examples .canvas {
 	width: 600px !important;
 	height: 400px !important;
 	margin: 0 auto;
+}
+
+
+.slide .md {
+	display: block;
+	overflow: hidden;
+	width: 70%;
+    margin: 5% auto;
+	padding: 3%;
+	background-color: white;
+	border: 5px solid #EFEFEF;
+	box-shadow: 2px 2px 2px #B7B7B7;
+	-webkit-box-shadow: 2px 2px 2px #B7B7B7;
+	-moz-box-shadow: 2px 2px 2px #B7B7B7;
+	-o-box-shadow: 2px 2px 2px #B7B7B7;
+	height: 84%;
+}
+
+.slide .md h2 {
+	margin: 0 0 3% 0;
+	padding: 0 0 2% 0;
+	border-bottom: 1px solid #E7E7E7;
+	font: italic 32px/1.5 Georgia, serif;
+}
+
+.slide .md h2 a {
+	color: black;
+	text-decoration: none;
 }
