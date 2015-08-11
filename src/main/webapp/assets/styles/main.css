@@ -1700,7 +1700,7 @@ translate3d
 }
 
 .style1 {
-	padding: 3em 0 5em 0;
+	padding: 20px;
 }
 
 .style1 h2 {
@@ -1718,6 +1718,14 @@ translate3d
     letter-spacing: 0.075em;
     line-height: 1.5em;
     color: #b1b4b9;
+}
+
+.70 {
+	height: 70%;
+}
+
+.feature-list {
+    margin-top: 3em;
 }
 
 .feature-list .row:first-child section {
@@ -1756,3 +1764,24 @@ h3 {
 .feature-list p {
     margin: 0 0 0 5em;
 }
+
+
+.special {
+	text-align: center;
+	margin: 2% auto;
+	padding: 2%;
+	background-color: #5E7D9C;
+}
+
+ul.icons {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.icons.labeled li {
+	display: inline-block;
+    margin: 1em 0;
+    padding: 0 2em 0 0;
+}
+
