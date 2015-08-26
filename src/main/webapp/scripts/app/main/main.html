@@ -46,10 +46,32 @@
 			</div>
 		</div>
 	</div>
-	<div id="hindsights" class="section">
-		<div class="slide" ng-repeat="md in mdFiles">
-			<div ng-param="{{md}}" class="md" btf-markdown ng-include="md"></div>
-		</div>
+
+	<div id="hindsights">
+		<section id="portfolio" class="bg-light-gray">
+			<div class="container">
+				<div class="row">
+					<div ng-repeat="article in articles">
+						<div class="col-md-4 col-sm-6 portfolio-item">
+							<a ng-href="#article{{ article.id }}" class="portfolio-link"
+								data-toggle="modal">
+								<div class="portfolio-hover">
+									<div class="portfolio-hover-content">
+										<i class="fa fa-plus fa-3x"></i>
+									</div>
+								</div> <img ng-src="assets/article/images/{{ article.path }}.png"
+								class="img-responsive" alt="">
+							</a>
+							<div class="portfolio-caption">
+								<h4>{{ article.title }}</h4>
+								<p class="text-muted">{{ article.subtitle }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 	</div>
 	<div class="section">
 		<section id="motivations">
@@ -87,6 +109,7 @@
 					</div>
 				</div>
 			</div>
+
 		</section>
 
 		<section id="contrib">
@@ -191,20 +214,29 @@
 	</div>
 </div>
 
+<div ng-repeat="article in articles">
+	<div class="portfolio-modal modal fade" id="article{{ article.id }}"
+		tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+		<div class="modal-content">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl"></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="modal-body">
+							<div ng-param="{{md}}" class="md" btf-markdown ng-include="article.pathToMd"></div>
 
-
-<script>
-	$(function() {
-		$("body").on(
-				"input propertychange",
-				".floating-label-form-group",
-				function(e) {
-					$(this).toggleClass("floating-label-form-group-with-value",
-							!!$(e.target).val());
-				}).on("focus", ".floating-label-form-group", function() {
-			$(this).addClass("floating-label-form-group-with-focus");
-		}).on("blur", ".floating-label-form-group", function() {
-			$(this).removeClass("floating-label-form-group-with-focus");
-		});
-	});
-</script>
+							<button type="button" class="btn btn-primary"
+								data-dismiss="modal">
+								<i class="fa fa-times"></i> Close
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

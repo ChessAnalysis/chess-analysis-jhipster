@@ -1,0 +1,57 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Title",
+            "fieldNameUnderscored": "title",
+            "fieldInJavaBeanMethod": "Title",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "subtitle",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Subtitle",
+            "fieldNameUnderscored": "subtitle",
+            "fieldInJavaBeanMethod": "Subtitle",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "path",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Path",
+            "fieldNameUnderscored": "path",
+            "fieldInJavaBeanMethod": "Path",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "date",
+            "fieldType": "DateTime",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Date",
+            "fieldNameUnderscored": "date",
+            "fieldInJavaBeanMethod": "Date",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": true,
+    "fieldsContainDate": false,
+    "changelogDate": "20150826094536",
+    "dto": "no",
+    "pagination": "no",
+    "validation": false
+}

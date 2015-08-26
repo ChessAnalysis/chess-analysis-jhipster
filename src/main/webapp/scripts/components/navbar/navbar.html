@@ -1,3 +1,4 @@
+
 <!-- <nav class="navbar" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
@@ -15,16 +16,24 @@
 				<li ui-sref-active="active"><a ui-sref="home"> <span
 						class="glyphicon glyphicon-home"></span> <span
 						translate="global.menu.home">Home</span>
-				</a></li>	
+				</a></li>
+				
+				<li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                                <span>
+                                    <span class="glyphicon glyphicon-th-list"></span>
+                                    <span class="hidden-tablet" translate="global.menu.entities.main">
+                                        Entities
+                                    </span>
+                                    <b class="caret"></b>
+                                </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active" ><a ui-sref="article"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.entities.article">article</span></a></li>
+                    </ul>
+                </li>
 
-				<li ui-sref-active="active" ng-switch-when="true"
-					class="dropdown pointer"><a class="dropdown-toggle"
-					data-toggle="dropdown" href=""> <span> <span
-							class="glyphicon glyphicon-th-list"></span> <span
-							class="hidden-tablet" translate="global.menu.entities.main">
-								Entities </span> <b class="caret"></b>
-					</span>
-				</a>
 				<li ng-class="{active: $state.includes('account')}"
 					class="dropdown pointer"><a class="dropdown-toggle"
 					data-toggle="dropdown" href=""> <span> <span
@@ -92,7 +101,7 @@
 			</ul>
 		</div>
 	</div>
-</nav>-->
+</nav> -->
 
 <!-- <hamburger-toggle id="menu-toggle" ng-class="{open: tgState}"
 	state="tgState"></hamburger-toggle>

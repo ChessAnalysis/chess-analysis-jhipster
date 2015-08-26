@@ -1,25 +1,25 @@
 'use strict';
 
 angular.module('jhipsterApp')
-.controller('MainController', function ($scope, Principal, $timeout, $http) {
+.controller('MainController', function ($scope, Principal, $timeout, $http, $state) {
 	Principal.identity().then(function(account) {
 		$scope.account = account;
 		$scope.isAuthenticated = Principal.isAuthenticated;
 	});
+	
+	$http.get('/api/articles').then(function(result) {
+		$scope.articles = result.data;
+		angular.forEach($scope.articles, function(value, key) {
+			value.pathToMd = "assets/article/" + value.path + ".md";
+		})
+	});
+	
+	$scope.isAuthenticated = Principal.isAuthenticated;
+    $scope.$state = $state;
 
 	$scope.moveSectionDown = function() {
 		$.fn.fullpage.moveSectionDown();
 	}
-
-	$http.get('/api/service/getMdFiles').
-	then(function(response) {
-		$scope.mdFiles = response.data;
-
-	}, function(response) {
-		// called asynchronously if an error occurs
-		// or server returns response with an error status.
-	});
-
 
 	var waitForRenderAndDoSomething = function() {
 		if($http.pendingRequests.length > 0) {
@@ -31,13 +31,14 @@ angular.module('jhipsterApp')
 				a.find('h2').append(' <a href="/#/article/' + a.attr('ng-param').split('/')[3] + '" class="btn-lg"><span class="glyphicon glyphicon-zoom-in"></span></a>');
 			});
 
-			angular.element("#fullpage").fullpage({
+			/*angular.element("#fullpage").fullpage({
 				'verticalCentered': false,
 				'css3': true,
 				'navigation': true,
 				'navigationPosition': 'right',
 				'navigationTooltips': ['Home', 'Insights', 'Motivations', 'Documentation'],
-			});
+				
+			});*/
 
 			angular.element('.md table').addClass('table');
 

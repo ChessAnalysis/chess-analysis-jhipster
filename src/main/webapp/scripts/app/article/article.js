@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 angular.module('jhipsterApp')
     .config(function ($stateProvider) {
@@ -20,3 +20,4 @@ angular.module('jhipsterApp')
                 }
             });
     });
+*/

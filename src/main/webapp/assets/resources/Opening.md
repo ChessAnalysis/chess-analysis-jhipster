@@ -1,3 +1,0 @@
-## Openings ##
-
-{{plot-94}}
