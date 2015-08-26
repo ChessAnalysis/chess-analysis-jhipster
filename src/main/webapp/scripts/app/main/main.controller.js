@@ -26,20 +26,6 @@ angular.module('jhipsterApp')
 			$timeout(waitForRenderAndDoSomething);
 		} else {
 
-			angular.forEach(angular.element(".md"), function(value, key) {
-				var a = angular.element(value);
-				a.find('h2').append(' <a href="/#/article/' + a.attr('ng-param').split('/')[3] + '" class="btn-lg"><span class="glyphicon glyphicon-zoom-in"></span></a>');
-			});
-
-			/*angular.element("#fullpage").fullpage({
-				'verticalCentered': false,
-				'css3': true,
-				'navigation': true,
-				'navigationPosition': 'right',
-				'navigationTooltips': ['Home', 'Insights', 'Motivations', 'Documentation'],
-				
-			});*/
-
 			angular.element('.md table').addClass('table');
 
 			angular.forEach(angular.element(".board"), function(value, key) {
